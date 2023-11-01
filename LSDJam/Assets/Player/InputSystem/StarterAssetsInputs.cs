@@ -12,6 +12,7 @@ namespace StarterAssets
 		public Vector2 look;
 		public bool jump;
 		public bool sprint;
+		public bool interact;
 		public bool piss;
 
 		[Header("Movement Settings")]
@@ -22,70 +23,26 @@ namespace StarterAssets
 		public bool cursorInputForLook = true;
 
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
-		public void OnMove(InputValue value)
-		{
-			MoveInput(value.Get<Vector2>());
-		}
-
 		public void OnLook(InputValue value)
 		{
 			if(cursorInputForLook)
-			{
 				LookInput(value.Get<Vector2>());
-			}
 		}
-
-		public void OnJump(InputValue value)
-		{
-			JumpInput(value.isPressed);
-		}
-
-		public void OnSprint(InputValue value)
-		{
-			SprintInput(value.isPressed);
-		}
-
-		public void OnPiss(InputValue value)
-		{
-			PissInput(value.isPressed);
-		}
+		public void OnMove(InputValue value) => MoveInput(value.Get<Vector2>());
+		public void OnJump(InputValue value) => JumpInput(value.isPressed);
+		public void OnSprint(InputValue value) => SprintInput(value.isPressed);
+		public void OnInteract(InputValue value) => InteractInput(value.isPressed);
+		public void OnPiss(InputValue value) => PissInput(value.isPressed);
 #endif
 
-
-		public void MoveInput(Vector2 newMoveDirection)
-		{
-			move = newMoveDirection;
-		} 
-
-		public void LookInput(Vector2 newLookDirection)
-		{
-			look = newLookDirection;
-		}
-
-		public void JumpInput(bool newJumpState)
-		{
-			jump = newJumpState;
-		}
-
-		public void SprintInput(bool newSprintState)
-		{
-			sprint = newSprintState;
-		}
-
-		public void PissInput(bool newPissState)
-		{
-			piss = newPissState;
-		}
-		
-		private void OnApplicationFocus(bool hasFocus)
-		{
-			SetCursorState(cursorLocked);
-		}
-
-		private void SetCursorState(bool newState)
-		{
-			Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
-		}
+		public void LookInput(Vector2 newLookDirection) => look = newLookDirection;
+		public void MoveInput(Vector2 newMoveDirection) => move = newMoveDirection;
+		public void JumpInput(bool newJumpState) => jump = newJumpState;
+		public void SprintInput(bool newSprintState) => sprint = newSprintState;
+		public void InteractInput(bool newInteractState) => interact = newInteractState;
+		public void PissInput(bool newPissState) => piss = newPissState;
+		private void OnApplicationFocus(bool hasFocus) => SetCursorState(cursorLocked);
+		private void SetCursorState(bool newState) => Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
 	}
 	
 }

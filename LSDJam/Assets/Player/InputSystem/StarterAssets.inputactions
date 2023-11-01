@@ -42,6 +42,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Interact",
+                    "type": "PassThrough",
+                    "id": "8cbec0c8-9cde-4534-8041-465743690a05",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Piss",
                     "type": "PassThrough",
                     "id": "4eb8f0e3-30d8-48b3-81a2-7b9f086b9d83",
@@ -236,6 +245,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Piss",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d9e39ef9-b973-4dc3-bb45-41c59168bff9",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
