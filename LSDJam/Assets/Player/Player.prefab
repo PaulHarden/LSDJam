@@ -461,18 +461,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4960174470795168024, guid: 276dfbe47f9217042909c2b06190fa11,
         type: 3}
+      propertyPath: CollisionModule.collisionMessages
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960174470795168024, guid: 276dfbe47f9217042909c2b06190fa11,
+        type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4960174470795168024, guid: 276dfbe47f9217042909c2b06190fa11,
         type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 30
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4960174470795168024, guid: 276dfbe47f9217042909c2b06190fa11,
         type: 3}
       propertyPath: InitialModule.startLifetime.minScalar
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
