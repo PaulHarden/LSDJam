@@ -71,8 +71,9 @@ namespace StarterAssets
 		private CharacterController _controller;
 		private StarterAssetsInputs _input;
 		private GameObject _mainCamera;
-
 		private const float _threshold = 0.01f;
+		public GameObject piss;
+		private ParticleSystem.EmissionModule _emissionModule;
 
 		private bool IsCurrentDeviceMouse
 		{
@@ -108,6 +109,9 @@ namespace StarterAssets
 			// reset our timeouts on start
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;
+			
+			// piss stream
+			_emissionModule = piss.GetComponent<ParticleSystem>().emission;
 		}
 
 		private void Update()
@@ -115,6 +119,12 @@ namespace StarterAssets
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
+
+			// turning the piss stream on/off on key press
+			if (_input.piss)
+				_emissionModule.enabled = true;
+			else
+				_emissionModule.enabled = false;
 		}
 
 		private void LateUpdate()
@@ -148,6 +158,9 @@ namespace StarterAssets
 
 				// rotate the player left and right
 				transform.Rotate(Vector3.up * _rotationVelocity);
+				
+				// rotate piss stream up and down with camera
+				//piss.transform.rotation = CinemachineCameraTarget.transform.rotation;
 			}
 		}
 
