@@ -5,18 +5,13 @@ public class DestroyOnInteract : MonoBehaviour, Interactable
 {
     public Image image;
     public Item item;
-
-    private void Start()
-    {
-        image.enabled = false;
-    }
-    
+    private const float maxRange = 100f;
     public float MaxRange
     {
         get { return maxRange; }
     }
 
-    private const float maxRange = 100f;
+    private void Start() => image.enabled = false;
     
     public void OnStartHover()
     {
@@ -30,8 +25,5 @@ public class DestroyOnInteract : MonoBehaviour, Interactable
         Destroy(gameObject);
     }
 
-    public void OnEndHover()
-    {
-        //Debug.Log($"We have lost {gameObject.name}");
-    }
+    public void OnEndHover() => Debug.Log($"{gameObject.name} has been destroyed!");
 }

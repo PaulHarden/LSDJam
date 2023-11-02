@@ -20,12 +20,8 @@ public class CameraRaycasting : MonoBehaviour
         RaycastForInteractable();
         
         if (_input.interact)
-        {
             if (currentTarget != null)
-            {
                 currentTarget.OnInteract();
-            }
-        }
     }
 
     private void RaycastForInteractable()

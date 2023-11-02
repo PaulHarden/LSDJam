@@ -127,10 +127,7 @@ namespace StarterAssets
 				_emissionModule.enabled = false;
 		}
 
-		private void LateUpdate()
-		{
-			CameraRotation();
-		}
+		private void LateUpdate() => CameraRotation();
 
 		private void GroundedCheck()
 		{
@@ -192,9 +189,7 @@ namespace StarterAssets
 				_speed = Mathf.Round(_speed * 1000f) / 1000f;
 			}
 			else
-			{
 				_speed = targetSpeed;
-			}
 
 			// normalise input direction
 			Vector3 inputDirection = new Vector3(_input.move.x, 0.0f, _input.move.y).normalized;
@@ -233,9 +228,7 @@ namespace StarterAssets
 
 				// jump timeout
 				if (_jumpTimeoutDelta >= 0.0f)
-				{
 					_jumpTimeoutDelta -= Time.deltaTime;
-				}
 			}
 			else
 			{
@@ -244,9 +237,7 @@ namespace StarterAssets
 
 				// fall timeout
 				if (_fallTimeoutDelta >= 0.0f)
-				{
 					_fallTimeoutDelta -= Time.deltaTime;
-				}
 
 				// if we are not grounded, do not jump
 				_input.jump = false;
@@ -254,9 +245,7 @@ namespace StarterAssets
 
 			// apply gravity over time if under terminal (multiply by delta time twice to linearly speed up over time)
 			if (_verticalVelocity < _terminalVelocity)
-			{
 				_verticalVelocity += Gravity * Time.deltaTime;
-			}
 		}
 
 		private static float ClampAngle(float lfAngle, float lfMin, float lfMax)

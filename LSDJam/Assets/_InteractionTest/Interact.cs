@@ -26,18 +26,24 @@ public class Interact : MonoBehaviour, Interactable
     public void OnInteract()
     {
         Debug.Log("Player interacted with " + gameObject.name);
-        
-        for(var i = 0; i < InventoryScript.inventory.Count; i++)
+        if (RequiredItem != null)
         {
-            /*if (InventoryScript.inventory[i].id == RequiredItem.id)
-            {*/
-                //audioManager.PlaySound("interact");
-                //Instantiate(RewardItem, transform.position + _offset, Quaternion.Euler(0, 90, -90));
-                Debug.Log("Player interacted with " + gameObject.name);
-                //Destroy(gameObject);
-            
-                //return;
-            //}
+            for(var i = 0; i < Inventory.inventory.Count; i++)
+            {
+                if (Inventory.inventory[i].id == RequiredItem.id)
+                {
+                    //audioManager.PlaySound("interact");
+                    Instantiate(RewardItem, transform.position + _offset, Quaternion.Euler(0, 90, -90));
+                    Destroy(gameObject);
+                    return;
+                }
+            }    
+        }
+        else
+        {
+            Instantiate(RewardItem, transform.position + _offset, Quaternion.Euler(0, 90, -90));
+            Destroy(gameObject);
+            return;
         }
 
         //audioManager.PlaySound("noKey");
