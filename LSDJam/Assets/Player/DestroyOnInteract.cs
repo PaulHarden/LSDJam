@@ -21,7 +21,7 @@ public class DestroyOnInteract : MonoBehaviour, Interactable
     public void OnInteract()
     {
         item.AddItem(item);
-        item.DisplayItem(image);
+        //item.DisplayItem(image);
         Destroy(gameObject);
     }
 

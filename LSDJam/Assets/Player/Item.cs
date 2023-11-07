@@ -28,5 +28,5 @@ public class Item : ScriptableObject
         }
     }
 
-    public void DisplayItem(Image image) => image.enabled = true;
+    //public void DisplayItem(Image image) => image.enabled = true;
 }
