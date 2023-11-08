@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 23143c67d49bc404c9eeac7ed0a3443d, type: 3}
-  m_Name: Tooth
+  m_Name: Key
   m_EditorClassIdentifier: 
-  displayName: Tooth
-  icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  id: 2
+  displayName: Key
+  icon: {fileID: 21300000, guid: df8ddbbd8f086704092b9c402cad8509, type: 3}

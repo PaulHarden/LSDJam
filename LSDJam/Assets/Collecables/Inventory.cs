@@ -2,15 +2,23 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory2 : MonoBehaviour
+public class Inventory : MonoBehaviour
 {
     public static event Action<List<InventoryItem>> OnInventoryChange;
-    public List<InventoryItem> inventory = new();
+    public static List<InventoryItem> inventory = new();
     private Dictionary<ItemData, InventoryItem> _itemDictionary = new();
 
-    // Tooth
-    private void OnEnable() => Tooth.OnToothCollected += Add;
-    private void OnDisable() => Tooth.OnToothCollected -= Add;
+    private void OnEnable()
+    {
+        Tooth.OnToothCollected += Add;
+        Key.OnKeyCollected += Add;
+    }
+
+    private void OnDisable()
+    {
+        Tooth.OnToothCollected -= Add;
+        Key.OnKeyCollected -= Add;
+    }
 
     public void Add(ItemData itemData)
     {

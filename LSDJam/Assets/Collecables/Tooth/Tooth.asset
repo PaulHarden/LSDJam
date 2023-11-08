@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 359733c4de48fa34aa415b4528534f10, type: 3}
-  m_Name: Key
+  m_Script: {fileID: 11500000, guid: 23143c67d49bc404c9eeac7ed0a3443d, type: 3}
+  m_Name: Tooth
   m_EditorClassIdentifier: 
   id: 1
-  quantity: 0
+  displayName: Tooth
+  icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}

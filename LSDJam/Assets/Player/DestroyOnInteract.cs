@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class DestroyOnInteract : MonoBehaviour, Interactable
+public class DestroyOnInteract : MonoBehaviour, IInteract
 {
     public Image image;
-    public Item item;
+    public InventoryItem item;
     private const float maxRange = 100f;
     public float MaxRange
     {
@@ -20,8 +20,7 @@ public class DestroyOnInteract : MonoBehaviour, Interactable
 
     public void OnInteract()
     {
-        item.AddItem(item);
-        //item.DisplayItem(image);
+        item.AddQuantity();
         Destroy(gameObject);
     }
 

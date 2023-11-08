@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,8 +6,8 @@ public class InventoryManager : MonoBehaviour
     public GameObject slotPrefab;
     public List<InventorySlot> inventorySlots = new (4);
 
-    private void OnEnable() => Inventory2.OnInventoryChange += DrawInventory;
-    private void OnDisable() => Inventory2.OnInventoryChange -= DrawInventory;
+    private void OnEnable() => Inventory.OnInventoryChange += DrawInventory;
+    private void OnDisable() => Inventory.OnInventoryChange -= DrawInventory;
 
     private void ResetInventory()
     {
