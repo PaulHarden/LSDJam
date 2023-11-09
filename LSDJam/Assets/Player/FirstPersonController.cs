@@ -17,14 +17,20 @@ namespace StarterAssets
 		[Tooltip("Sprint speed of the character in m/s")]
 		public float SprintSpeed = 6.0f;
 		private float _targetSpeed;
-		private bool canSprint = true;
-		public float stamina;
-		private float staminaMax = 100f;
-		public float refillRate;
 		[Tooltip("Rotation speed of the character")]
 		public float RotationSpeed = 1.0f;
 		[Tooltip("Acceleration and deceleration")]
 		public float SpeedChangeRate = 10.0f;
+		private bool canSprint = true;
+		public float stamina;
+		private float staminaMax = 100f;
+		public float staminaRate;
+		public bool canPiss = true;
+		public float piss;
+		private float pissMax = 100f;
+		public float pissRate;
+		public GameObject Piss;
+		private ParticleSystem.EmissionModule _emissionModule;
 
 		[Space(10)]
 		[Tooltip("The height the player can jump")]
@@ -77,8 +83,6 @@ namespace StarterAssets
 		private StarterAssetsInputs _input;
 		private GameObject _mainCamera;
 		private const float _threshold = 0.01f;
-		public GameObject piss;
-		private ParticleSystem.EmissionModule _emissionModule;
 
 		private bool IsCurrentDeviceMouse
 		{
@@ -96,9 +100,7 @@ namespace StarterAssets
 		{
 			// get a reference to our main camera
 			if (_mainCamera == null)
-			{
 				_mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
-			}
 		}
 
 		private void Start()
@@ -110,7 +112,7 @@ namespace StarterAssets
 #else
 			Debug.LogError( "Starter Assets package is missing dependencies. Please use Tools/Starter Assets/Reinstall Dependencies to fix it");
 #endif
-
+			
 			// reset our timeouts on start
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;
@@ -119,7 +121,8 @@ namespace StarterAssets
 			stamina = staminaMax;
 			
 			// piss stream
-			_emissionModule = piss.GetComponent<ParticleSystem>().emission;
+			piss = pissMax;
+			_emissionModule = Piss.GetComponent<ParticleSystem>().emission;
 		}
 
 		private void Update()
@@ -130,9 +133,26 @@ namespace StarterAssets
 
 			// turning the piss stream on/off on key press
 			if (_input.piss)
-				_emissionModule.enabled = true;
+			{
+				if (piss > 0 && canPiss)
+				{
+					_emissionModule.enabled = true;
+					piss -= Time.deltaTime * pissRate;
+					canPiss = true;
+				}
+				else
+				{
+					_emissionModule.enabled = false;
+					canPiss = false;
+				}
+			}
 			else
+			{
 				_emissionModule.enabled = false;
+				if (piss <= pissMax)
+					piss += Time.deltaTime * pissRate;			
+				canPiss = true;
+			}
 		}
 
 		private void LateUpdate() => CameraRotation();
@@ -165,7 +185,7 @@ namespace StarterAssets
 				transform.Rotate(Vector3.up * _rotationVelocity);
 				
 				// rotate piss stream up and down with camera
-				//piss.transform.rotation = CinemachineCameraTarget.transform.rotation;
+				//Piss.transform.rotation = CinemachineCameraTarget.transform.rotation;
 			}
 		}
 
@@ -176,7 +196,7 @@ namespace StarterAssets
 			{
 				if (stamina > 0 && canSprint)
 				{
-					stamina -= Time.deltaTime * refillRate;
+					stamina -= Time.deltaTime * staminaRate;
 					_targetSpeed = SprintSpeed;
 					canSprint = true;
 				}
@@ -189,7 +209,7 @@ namespace StarterAssets
 			else
 			{
 				if (stamina <= staminaMax)
-					stamina += Time.deltaTime * refillRate;			
+					stamina += Time.deltaTime * staminaRate;			
 				_targetSpeed = MoveSpeed;
 				canSprint = true;
 			}
@@ -293,6 +313,14 @@ namespace StarterAssets
 
 			// when selected, draw a gizmo in the position of, and matching radius of, the grounded collider
 			Gizmos.DrawSphere(new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z), GroundedRadius);
+		}
+
+		// collects an object when collided with.
+		private void OnTriggerEnter(Collider other)
+		{
+			ICollectable collectable = other.GetComponent<ICollectable>();
+			if (collectable != null)
+				collectable.Collect();
 		}
 	}
 }
