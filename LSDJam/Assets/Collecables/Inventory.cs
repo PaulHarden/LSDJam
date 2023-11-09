@@ -10,12 +10,14 @@ public class Inventory : MonoBehaviour
 
     private void OnEnable()
     {
+        Interactable.OnInteracted += Subtract;
         Tooth.OnToothCollected += Add;
         Key.OnKeyCollected += Add;
     }
 
     private void OnDisable()
     {
+        Interactable.OnInteracted -= Subtract;
         Tooth.OnToothCollected -= Add;
         Key.OnKeyCollected -= Add;
     }
@@ -23,7 +25,6 @@ public class Inventory : MonoBehaviour
     public void Add(ItemData itemData)
     {
         // TODO: check if going over available slots capacity!
-        
         if (_itemDictionary.TryGetValue(itemData, out InventoryItem item))
         {
             item.AddQuantity();

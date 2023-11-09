@@ -2,10 +2,8 @@ using UnityEngine;
 
 public class Tooth : MonoBehaviour, ICollectable
 {
-    //public ItemData RewardItem;
     public float RotationSpeed;
     public AnimationCurve BobCurve;
-    
     public static event HandleToothCollected OnToothCollected;
     public delegate void HandleToothCollected(ItemData itemData);
     public ItemData toothData;

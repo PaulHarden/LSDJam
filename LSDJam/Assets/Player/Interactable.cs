@@ -3,6 +3,9 @@ using UnityEngine.UI;
 
 public class Interactable : MonoBehaviour, IInteract
 {
+    public static event HandleInteract OnInteracted;
+    public delegate void HandleInteract(ItemData item);
+    
     //public AudioManager audioManager;
     public Image InteractPrompt;
     public Image RequiredPrompt;
@@ -32,16 +35,17 @@ public class Interactable : MonoBehaviour, IInteract
             {
                 if (Inventory.inventory[i].itemData.id == RequiredItem.id)
                 {
+                    OnInteracted?.Invoke(Inventory.inventory[i].itemData);
                     //audioManager.PlaySound("interact");
-                    Instantiate(RewardItem, transform.position + _offset, Quaternion.identity); //Quaternion.Euler(0, 90, -90));
+                    Instantiate(RewardItem, transform.position + _offset, Quaternion.identity);
                     Destroy(gameObject);
                     return;
                 }
-            }    
+            }
         }
         else
         {
-            Instantiate(RewardItem, transform.position + _offset, Quaternion.identity); //Quaternion.Euler(0, 90, -90));
+            Instantiate(RewardItem, transform.position + _offset, Quaternion.identity);
             Destroy(gameObject);
             return;
         }
