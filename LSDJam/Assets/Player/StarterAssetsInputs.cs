@@ -1,9 +1,7 @@
 using UnityEngine;
-#if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
-#endif
 
-namespace StarterAssets
+namespace Player
 {
 	public class StarterAssetsInputs : MonoBehaviour
 	{
@@ -14,6 +12,7 @@ namespace StarterAssets
 		public bool sprint;
 		public bool interact;
 		public bool piss;
+		public bool pause;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -33,6 +32,7 @@ namespace StarterAssets
 		public void OnSprint(InputValue value) => SprintInput(value.isPressed);
 		public void OnInteract(InputValue value) => InteractInput(value.isPressed);
 		public void OnPiss(InputValue value) => PissInput(value.isPressed);
+		public void OnPause(InputValue value) => PauseInput(value.isPressed);
 #endif
 
 		public void LookInput(Vector2 newLookDirection) => look = newLookDirection;
@@ -41,8 +41,9 @@ namespace StarterAssets
 		public void SprintInput(bool newSprintState) => sprint = newSprintState;
 		public void InteractInput(bool newInteractState) => interact = newInteractState;
 		public void PissInput(bool newPissState) => piss = newPissState;
+		public void PauseInput(bool newPauseState) => pause = newPauseState;
 		private void OnApplicationFocus(bool hasFocus) => SetCursorState(cursorLocked);
-		private void SetCursorState(bool newState) => Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
+		public void SetCursorState(bool newState) => Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
 	}
 	
 }

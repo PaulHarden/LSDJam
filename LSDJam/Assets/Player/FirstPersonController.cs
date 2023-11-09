@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
-#if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
-#endif
 
-namespace StarterAssets
+namespace Player
 {
 	[RequireComponent(typeof(CharacterController))]
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
@@ -16,7 +14,6 @@ namespace StarterAssets
 		public float MoveSpeed = 4.0f;
 		[Tooltip("Sprint speed of the character in m/s")]
 		public float SprintSpeed = 6.0f;
-		private float _targetSpeed;
 		[Tooltip("Rotation speed of the character")]
 		public float RotationSpeed = 1.0f;
 		[Tooltip("Acceleration and deceleration")]
@@ -29,7 +26,7 @@ namespace StarterAssets
 		public float piss;
 		private float pissMax = 100f;
 		public float pissRate;
-		public GameObject Piss;
+		public GameObject PissFX;
 		private ParticleSystem.EmissionModule _emissionModule;
 
 		[Space(10)]
@@ -67,9 +64,11 @@ namespace StarterAssets
 
 		// player
 		private float _speed;
+		private float _targetSpeed;
 		private float _rotationVelocity;
 		private float _verticalVelocity;
 		private float _terminalVelocity = 53.0f;
+		public bool isPaused;
 
 		// timeout deltatime
 		private float _jumpTimeoutDelta;
@@ -80,7 +79,7 @@ namespace StarterAssets
 		private PlayerInput _playerInput;
 #endif
 		private CharacterController _controller;
-		private StarterAssetsInputs _input;
+		public StarterAssetsInputs input;
 		private GameObject _mainCamera;
 		private const float _threshold = 0.01f;
 
@@ -98,7 +97,6 @@ namespace StarterAssets
 
 		private void Awake()
 		{
-			// get a reference to our main camera
 			if (_mainCamera == null)
 				_mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
 		}
@@ -106,7 +104,7 @@ namespace StarterAssets
 		private void Start()
 		{
 			_controller = GetComponent<CharacterController>();
-			_input = GetComponent<StarterAssetsInputs>();
+			input = GetComponent<StarterAssetsInputs>();
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 			_playerInput = GetComponent<PlayerInput>();
 #else
@@ -122,7 +120,7 @@ namespace StarterAssets
 			
 			// piss stream
 			piss = pissMax;
-			_emissionModule = Piss.GetComponent<ParticleSystem>().emission;
+			_emissionModule = PissFX.GetComponent<ParticleSystem>().emission;
 		}
 
 		private void Update()
@@ -130,28 +128,12 @@ namespace StarterAssets
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
-
-			// turning the piss stream on/off on key press
-			if (_input.piss)
+			Piss();
+			
+			if (input.pause)
 			{
-				if (piss > 0 && canPiss)
-				{
-					_emissionModule.enabled = true;
-					piss -= Time.deltaTime * pissRate;
-					canPiss = true;
-				}
-				else
-				{
-					_emissionModule.enabled = false;
-					canPiss = false;
-				}
-			}
-			else
-			{
-				_emissionModule.enabled = false;
-				if (piss <= pissMax)
-					piss += Time.deltaTime * pissRate;			
-				canPiss = true;
+				input.pause = !input.pause;
+				PauseResume();
 			}
 		}
 
@@ -167,13 +149,13 @@ namespace StarterAssets
 		private void CameraRotation()
 		{
 			// if there is an input
-			if (_input.look.sqrMagnitude >= _threshold)
+			if (input.look.sqrMagnitude >= _threshold)
 			{
 				//Don't multiply mouse input by Time.deltaTime
 				float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
-				
-				_cinemachineTargetPitch += _input.look.y * RotationSpeed * deltaTimeMultiplier;
-				_rotationVelocity = _input.look.x * RotationSpeed * deltaTimeMultiplier;
+			
+				_cinemachineTargetPitch += input.look.y * RotationSpeed * deltaTimeMultiplier;
+				_rotationVelocity = input.look.x * RotationSpeed * deltaTimeMultiplier;
 
 				// clamp our pitch rotation
 				_cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
@@ -183,16 +165,16 @@ namespace StarterAssets
 
 				// rotate the player left and right
 				transform.Rotate(Vector3.up * _rotationVelocity);
-				
+			
 				// rotate piss stream up and down with camera
-				//Piss.transform.rotation = CinemachineCameraTarget.transform.rotation;
+				//PissFX.transform.rotation = CinemachineCameraTarget.transform.rotation;
 			}
 		}
 
 		private void Move()
 		{
 			// set target speed based on move speed, sprint speed and if sprint is pressed
-			if (_input.sprint)
+			if (input.sprint)
 			{
 				if (stamina > 0 && canSprint)
 				{
@@ -218,13 +200,13 @@ namespace StarterAssets
 
 			// note: Vector2's == operator uses approximation so is not floating point error prone, and is cheaper than magnitude
 			// if there is no input, set the target speed to 0
-			if (_input.move == Vector2.zero) _targetSpeed = 0.0f;
+			if (input.move == Vector2.zero) _targetSpeed = 0.0f;
 
 			// a reference to the players current horizontal velocity
 			float currentHorizontalSpeed = new Vector3(_controller.velocity.x, 0.0f, _controller.velocity.z).magnitude;
 
 			float speedOffset = 0.1f;
-			float inputMagnitude = _input.analogMovement ? _input.move.magnitude : 1f;
+			float inputMagnitude = input.analogMovement ? input.move.magnitude : 1f;
 
 			// accelerate or decelerate to target speed
 			if (currentHorizontalSpeed < _targetSpeed - speedOffset || currentHorizontalSpeed > _targetSpeed + speedOffset)
@@ -240,14 +222,14 @@ namespace StarterAssets
 				_speed = _targetSpeed;
 
 			// normalise input direction
-			Vector3 inputDirection = new Vector3(_input.move.x, 0.0f, _input.move.y).normalized;
+			Vector3 inputDirection = new Vector3(input.move.x, 0.0f, input.move.y).normalized;
 
 			// note: Vector2's != operator uses approximation so is not floating point error prone, and is cheaper than magnitude
 			// if there is a move input rotate player when the player is moving
-			if (_input.move != Vector2.zero)
+			if (input.move != Vector2.zero)
 			{
 				// move
-				inputDirection = transform.right * _input.move.x + transform.forward * _input.move.y;
+				inputDirection = transform.right * input.move.x + transform.forward * input.move.y;
 			}
 
 			// move the player
@@ -268,7 +250,7 @@ namespace StarterAssets
 				}
 
 				// Jump
-				if (_input.jump && _jumpTimeoutDelta <= 0.0f)
+				if (input.jump && _jumpTimeoutDelta <= 0.0f)
 				{
 					// the square root of H * -2 * G = how much velocity needed to reach desired height
 					_verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
@@ -288,13 +270,60 @@ namespace StarterAssets
 					_fallTimeoutDelta -= Time.deltaTime;
 
 				// if we are not grounded, do not jump
-				_input.jump = false;
+				input.jump = false;
 			}
 
 			// apply gravity over time if under terminal (multiply by delta time twice to linearly speed up over time)
 			if (_verticalVelocity < _terminalVelocity)
 				_verticalVelocity += Gravity * Time.deltaTime;
 		}
+
+		private void Piss()
+		{
+			if (input.piss)
+			{
+				if (piss > 0 && canPiss)
+				{
+					_emissionModule.enabled = true;
+					piss -= Time.deltaTime * pissRate;
+					canPiss = true;
+				}
+				else
+				{
+					_emissionModule.enabled = false;
+					canPiss = false;
+				}
+			}
+			else
+			{
+				_emissionModule.enabled = false;
+				if (piss <= pissMax)
+					piss += Time.deltaTime * pissRate;			
+				canPiss = true;
+			}
+		}
+
+		public void PauseResume()
+		{
+			if (!isPaused)
+			{
+				Time.timeScale = 0f;
+				input.SetCursorState(false);
+				input.cursorLocked = false;
+				input.cursorInputForLook = false;
+				isPaused = true;
+			}
+			else
+			{
+				Time.timeScale = 1f;
+				input.SetCursorState(true);
+				input.cursorLocked = true;
+				input.cursorInputForLook = true;
+				isPaused = false;
+			}
+		}
+
+		public void Quit() => Application.Quit();
 
 		private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
 		{
@@ -314,10 +343,10 @@ namespace StarterAssets
 			// when selected, draw a gizmo in the position of, and matching radius of, the grounded collider
 			Gizmos.DrawSphere(new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z), GroundedRadius);
 		}
-
-		// collects an object when collided with.
+		
 		private void OnTriggerEnter(Collider other)
 		{
+			// collects an object when collided with.
 			ICollectable collectable = other.GetComponent<ICollectable>();
 			if (collectable != null)
 				collectable.Collect();
