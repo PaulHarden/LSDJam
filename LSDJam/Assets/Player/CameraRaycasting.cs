@@ -1,4 +1,4 @@
-﻿using StarterAssets;
+﻿using Player;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
