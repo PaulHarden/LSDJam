@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Player
@@ -19,6 +20,7 @@ namespace Player
 		[Tooltip("Acceleration and deceleration")]
 		public float SpeedChangeRate = 10.0f;
 		private bool canSprint = true;
+		public float health;
 		public float stamina;
 		private float staminaMax = 100f;
 		public float staminaRate;
@@ -350,6 +352,10 @@ namespace Player
 			ICollectable collectable = other.GetComponent<ICollectable>();
 			if (collectable != null)
 				collectable.Collect();
+
+			// enemy detection
+			if (other.gameObject.CompareTag("Enemy"))
+				health -= 10f;
 		}
 	}
 }
