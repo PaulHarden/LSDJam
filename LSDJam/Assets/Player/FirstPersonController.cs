@@ -1,4 +1,5 @@
 ﻿using System;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -36,6 +37,11 @@ namespace Player
 		public float JumpHeight = 1.2f;
 		[Tooltip("The character uses its own gravity value. The engine default is -9.81f")]
 		public float Gravity = -15.0f;
+		[Tooltip("The height the player's vision is when crouched")]
+		private float _startHeight = 1.375f;
+		public float CrouchHeight = 0.5f;
+		[Tooltip("The amount of time it takes to full crouch/stand")]
+		public float CrouchTime = 3f;
 
 		[Space(10)]
 		[Tooltip("Time required to pass before being able to jump again. Set to 0f to instantly jump again")]
@@ -130,6 +136,7 @@ namespace Player
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
+			Crouch();
 			Piss();
 			
 			if (input.pause)
@@ -278,6 +285,23 @@ namespace Player
 			// apply gravity over time if under terminal (multiply by delta time twice to linearly speed up over time)
 			if (_verticalVelocity < _terminalVelocity)
 				_verticalVelocity += Gravity * Time.deltaTime;
+		}
+		
+		private void Crouch()
+		{
+			float velY = 0;
+			if (input.crouch)
+			{
+				float newY = Mathf.SmoothDamp(CinemachineCameraTarget.transform.localPosition.y, CrouchHeight, ref velY, Time.deltaTime * CrouchTime);
+				CinemachineCameraTarget.transform.localPosition = new Vector3(0, newY, 0);
+				GetComponent<CharacterController>().height = CrouchHeight;
+			}
+			else
+			{
+				float newY = Mathf.SmoothDamp(CinemachineCameraTarget.transform.localPosition.y, _startHeight, ref velY, Time.deltaTime * CrouchTime);
+				CinemachineCameraTarget.transform.localPosition = new Vector3(0, newY, 0);
+				GetComponent<CharacterController>().height = 2f;
+			}
 		}
 
 		private void Piss()
