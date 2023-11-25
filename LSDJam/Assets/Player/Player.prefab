@@ -3078,7 +3078,7 @@ MonoBehaviour:
   PissFX: {fileID: 1236293796212605849}
   JumpHeight: 1.2
   Gravity: -15
-  CrouchHeight: 0.5
+  CrouchHeight: 0.75
   CrouchTime: 3
   JumpTimeout: 0.1
   FallTimeout: 0.15
