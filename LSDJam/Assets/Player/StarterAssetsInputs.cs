@@ -11,6 +11,7 @@ namespace Player
 		public bool jump;
 		public bool sprint;
 		public bool interact;
+		public bool crouch;
 		public bool piss;
 		public bool pause;
 
@@ -31,6 +32,7 @@ namespace Player
 		public void OnJump(InputValue value) => JumpInput(value.isPressed);
 		public void OnSprint(InputValue value) => SprintInput(value.isPressed);
 		public void OnInteract(InputValue value) => InteractInput(value.isPressed);
+		public void OnCrouch(InputValue value) => CrouchInput(value.isPressed);
 		public void OnPiss(InputValue value) => PissInput(value.isPressed);
 		public void OnPause(InputValue value) => PauseInput(value.isPressed);
 #endif
@@ -40,6 +42,7 @@ namespace Player
 		public void JumpInput(bool newJumpState) => jump = newJumpState;
 		public void SprintInput(bool newSprintState) => sprint = newSprintState;
 		public void InteractInput(bool newInteractState) => interact = newInteractState;
+		public void CrouchInput(bool newCrouchState) => crouch = newCrouchState;
 		public void PissInput(bool newPissState) => piss = newPissState;
 		public void PauseInput(bool newPauseState) => pause = newPauseState;
 		private void OnApplicationFocus(bool hasFocus) => SetCursorState(cursorLocked);
