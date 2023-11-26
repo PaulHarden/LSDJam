@@ -24,7 +24,6 @@ namespace Audio
 
 		public void PlaySound(AudioClip clip, float vol)
 		{
-			effectsSource.volume = vol * _masterVolume * _effectVolume;
 			effectsSource.pitch = 1f;
 			effectsSource.PlayOneShot(clip);
 		}
@@ -33,7 +32,6 @@ namespace Audio
 		{
 			float randomPitch = Random.Range(minPitch, maxPitch);
 			effectsSource.pitch = randomPitch;
-			effectsSource.volume = vol * _masterVolume * _effectVolume;
 			effectsSource.PlayOneShot(clip);
 		}
 	

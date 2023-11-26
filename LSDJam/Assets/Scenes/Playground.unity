@@ -365,6 +365,8 @@ MonoBehaviour:
   RequiredItem: {fileID: 11400000, guid: ff9dcb2b8bc5f3d48a59371f83200206, type: 2}
   RewardItem: {fileID: 8823955508497652860, guid: 59ec838f5d58d2544add847e302b6aa1,
     type: 3}
+  UnlockedSFX: {fileID: 8300000, guid: 1c1db5e3569a36d4bafc81011a41f25b, type: 3}
+  LockedSFX: {fileID: 8300000, guid: 8130a07b0674086419c84a214bbcaf83, type: 3}
 --- !u!1 &332271521
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,6 +517,8 @@ MonoBehaviour:
   RequiredItem: {fileID: 0}
   RewardItem: {fileID: 8823955508497652860, guid: 59ec838f5d58d2544add847e302b6aa1,
     type: 3}
+  UnlockedSFX: {fileID: 8300000, guid: 1c1db5e3569a36d4bafc81011a41f25b, type: 3}
+  LockedSFX: {fileID: 8300000, guid: 8130a07b0674086419c84a214bbcaf83, type: 3}
 --- !u!65 &1764095435
 BoxCollider:
   m_ObjectHideFlags: 0
