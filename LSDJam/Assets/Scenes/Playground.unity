@@ -751,31 +751,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3164649126214578945, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 765.4056
-      objectReference: {fileID: 0}
-    - target: {fileID: 3164649126214578945, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 430.54
-      objectReference: {fileID: 0}
-    - target: {fileID: 3164649126214578945, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 799
-      objectReference: {fileID: 0}
-    - target: {fileID: 3164649126214578945, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 427
-      objectReference: {fileID: 0}
-    - target: {fileID: 8464442034814305723, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
       propertyPath: m_Name
@@ -841,9 +816,9 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 332271524}
+  - {fileID: 1292787133138444717}
   - {fileID: 5393215579111688471}
   - {fileID: 2084445384}
   - {fileID: 92945950}
   - {fileID: 141333415}
   - {fileID: 1764095438}
-  - {fileID: 1292787133138444717}

@@ -9,7 +9,6 @@ namespace Audio
 		[SerializeField] private AudioSource effectsSource;
 		[SerializeField] private AudioSource musicSource;
 		public float minPitch, maxPitch;
-		public AudioClip levelMusic;
 		private float _masterVolume;
 		private float _musicVolume;
 		private float _effectVolume;
@@ -17,22 +16,11 @@ namespace Audio
 		private void Awake()
 		{
 			if (Singleton != null && Singleton != this)
-			{
-				if (levelMusic != Singleton.levelMusic)
-				{
-					Singleton.levelMusic = levelMusic;
-					Singleton.PlayLevelMusic();
-				}
 				Destroy(gameObject);
-			}
 			else
 				Singleton = this;
 			DontDestroyOnLoad(this);
 		}
-
-		public void Start() => PlayLevelMusic(); // TODO: remove later.
-
-		public void PlayLevelMusic() => PlayMusic(levelMusic);
 
 		public void PlaySound(AudioClip clip, float vol)
 		{
