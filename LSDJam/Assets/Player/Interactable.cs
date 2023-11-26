@@ -5,12 +5,12 @@ public class Interactable : MonoBehaviour, IInteract
 {
     public static event HandleInteract OnInteracted;
     public delegate void HandleInteract(ItemData item);
-    
-    //public AudioManager audioManager;
     public Image InteractPrompt;
     public Image RequiredPrompt;
     public ItemData RequiredItem;
     public GameObject RewardItem;
+    public AudioClip UnlockedSFX;
+    public AudioClip LockedSFX;
     private Vector3 _offset = new(0,1f,0);
     private const float maxRange = 100f;
     public float MaxRange
@@ -36,7 +36,7 @@ public class Interactable : MonoBehaviour, IInteract
                 if (Inventory.inventory[i].itemData.id == RequiredItem.id)
                 {
                     OnInteracted?.Invoke(Inventory.inventory[i].itemData);
-                    //audioManager.PlaySound("interact");
+                    //AudioController.Singleton.PlaySound(UnlockedSFX, 0.25f);
                     Instantiate(RewardItem, transform.position + _offset, Quaternion.identity);
                     Destroy(gameObject);
                     return;
@@ -49,8 +49,7 @@ public class Interactable : MonoBehaviour, IInteract
             Destroy(gameObject);
             return;
         }
-
-        //audioManager.PlaySound("noKey");
+        //AudioController.Singleton.PlaySound(LockedSFX, 0.25f);
         RequiredPrompt.enabled = true;
     }
 
