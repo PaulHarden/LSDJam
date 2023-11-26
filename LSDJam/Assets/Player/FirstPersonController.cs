@@ -42,6 +42,7 @@ namespace Player
 		public float CrouchHeight = 0.5f;
 		[Tooltip("The amount of time it takes to full crouch/stand")]
 		public float CrouchTime = 3f;
+		private bool _isCrouched;
 
 		[Space(10)]
 		[Tooltip("Time required to pass before being able to jump again. Set to 0f to instantly jump again")]
@@ -290,17 +291,22 @@ namespace Player
 		private void Crouch()
 		{
 			float velY = 0;
-			if (input.crouch)
-			{
-				float newY = Mathf.SmoothDamp(CinemachineCameraTarget.transform.localPosition.y, CrouchHeight, ref velY, Time.deltaTime * CrouchTime);
-				CinemachineCameraTarget.transform.localPosition = new Vector3(0, newY, 0);
-				GetComponent<CharacterController>().height = CrouchHeight;
-			}
-			else
+			if (_isCrouched && input.crouch)
 			{
 				float newY = Mathf.SmoothDamp(CinemachineCameraTarget.transform.localPosition.y, _startHeight, ref velY, Time.deltaTime * CrouchTime);
 				CinemachineCameraTarget.transform.localPosition = new Vector3(0, newY, 0);
 				GetComponent<CharacterController>().height = 2f;
+				_isCrouched = false;
+				input.crouch = false;
+			}
+
+			if (!_isCrouched && input.crouch)
+			{
+				float newY = Mathf.SmoothDamp(CinemachineCameraTarget.transform.localPosition.y, CrouchHeight, ref velY, Time.deltaTime * CrouchTime);
+				CinemachineCameraTarget.transform.localPosition = new Vector3(0, newY, 0);
+				GetComponent<CharacterController>().height = CrouchHeight;
+				_isCrouched = true;
+				input.crouch = false;
 			}
 		}
 
