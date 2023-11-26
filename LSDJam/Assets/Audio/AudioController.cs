@@ -1,97 +1,92 @@
 using System.Collections;
 using UnityEngine;
 
-public class AudioController : MonoBehaviour
+namespace Audio
 {
-	public static AudioController Singleton { get; set; }
-	[SerializeField] private AudioSource effectsSource;
-	[SerializeField] private AudioSource musicSource;
-	public float minPitch, maxPitch;
-	public AudioClip levelMusic;
-	private float _masterVolume;
-	private float _musicVolume;
-	private float _effectVolume;
-
-	private void Awake()
+	public class AudioController : MonoBehaviour
 	{
-		if (Singleton != null && Singleton != this)
+		public static AudioController Singleton { get; set; }
+		[SerializeField] private AudioSource effectsSource;
+		[SerializeField] private AudioSource musicSource;
+		public float minPitch, maxPitch;
+		public AudioClip levelMusic;
+		private float _masterVolume;
+		private float _musicVolume;
+		private float _effectVolume;
+
+		private void Awake()
 		{
-			if (levelMusic != Singleton.levelMusic)
+			if (Singleton != null && Singleton != this)
 			{
-				Singleton.levelMusic = levelMusic;
-				Singleton.PlayLevelMusic();
+				if (levelMusic != Singleton.levelMusic)
+				{
+					Singleton.levelMusic = levelMusic;
+					Singleton.PlayLevelMusic();
+				}
+				Destroy(gameObject);
 			}
-			Destroy(gameObject);
+			else
+				Singleton = this;
+			DontDestroyOnLoad(this);
 		}
-		else
-			Singleton = this;
-		DontDestroyOnLoad(this);
-	}
 
-	private void AdjustVolume()
-	{
-		_masterVolume = PlayerPrefs.GetFloat("MasterVolume", 0.5f);
-		_musicVolume = PlayerPrefs.GetFloat("MusicVolume", 0.5f);
-		_effectVolume = PlayerPrefs.GetFloat("EffectVolume", 0.5f);
-		musicSource.volume = _masterVolume * _musicVolume;
-	}
+		public void Start() => PlayLevelMusic(); // TODO: remove later.
 
-	public void Start() => PlayLevelMusic(); // TODO: remove later.
+		public void PlayLevelMusic() => PlayMusic(levelMusic);
 
-	public void PlayLevelMusic() => PlayMusic(levelMusic);
-
-	public void PlaySound(AudioClip clip, float vol)
-	{
-		effectsSource.volume = vol * _masterVolume * _effectVolume;
-		effectsSource.pitch = 1f;
-		effectsSource.PlayOneShot(clip);
-	}
-
-	public void StopSound() => effectsSource.Stop();
-
-	public void PlayRandomSound(AudioClip clip, float vol)
-	{
-		float randomPitch = Random.Range(minPitch, maxPitch);
-		effectsSource.pitch = randomPitch;
-		effectsSource.volume = vol * _masterVolume * _effectVolume;
-		effectsSource.PlayOneShot(clip);
-	}
-
-	public void PlayMusic(AudioClip clip)
-	{
-		musicSource.clip = clip;
-		StartCoroutine(FadeIn(2f));
-	}
-
-	public void StopMusic() => StartCoroutine(FadeOut(2f));
-
-	public IEnumerator FadeIn(float duration)
-	{
-		float t = 0;
-		musicSource.volume = 0f;
-		musicSource.Play();
-		while (t < duration)
+		public void PlaySound(AudioClip clip, float vol)
 		{
-			t += Time.deltaTime;
-			musicSource.volume = Mathf.Lerp(0f, _masterVolume * _musicVolume, t / duration);
+			effectsSource.volume = vol * _masterVolume * _effectVolume;
+			effectsSource.pitch = 1f;
+			effectsSource.PlayOneShot(clip);
+		}
+
+		public void PlayRandomSound(AudioClip clip, float vol)
+		{
+			float randomPitch = Random.Range(minPitch, maxPitch);
+			effectsSource.pitch = randomPitch;
+			effectsSource.volume = vol * _masterVolume * _effectVolume;
+			effectsSource.PlayOneShot(clip);
+		}
+	
+		public void StopSound() => effectsSource.Stop();
+
+		public void PlayMusic(AudioClip clip)
+		{
+			musicSource.clip = clip;
+			StartCoroutine(FadeIn(2f));
+		}
+
+		public void StopMusic() => StartCoroutine(FadeOut(2f));
+
+		public IEnumerator FadeIn(float duration)
+		{
+			float t = 0;
+			musicSource.volume = 0f;
+			musicSource.Play();
+			while (t < duration)
+			{
+				t += Time.deltaTime;
+				musicSource.volume = Mathf.Lerp(0f, _masterVolume * _musicVolume, t / duration);
+				yield return null;
+			}
+			musicSource.volume = _masterVolume * _musicVolume;
 			yield return null;
 		}
-		musicSource.volume = _masterVolume * _musicVolume;
-		yield return null;
-	}
 
-	public IEnumerator FadeOut(float duration)
-	{
-		float currentTime = 0;
-		float startVol = musicSource.volume;
-		while (currentTime < duration)
+		public IEnumerator FadeOut(float duration)
 		{
-			currentTime += Time.deltaTime;
-			musicSource.volume = Mathf.Lerp(startVol, 0f, currentTime / duration);
-			if (musicSource.volume <= 0)
-				musicSource.Stop();
+			float currentTime = 0;
+			float startVol = musicSource.volume;
+			while (currentTime < duration)
+			{
+				currentTime += Time.deltaTime;
+				musicSource.volume = Mathf.Lerp(startVol, 0f, currentTime / duration);
+				if (musicSource.volume <= 0)
+					musicSource.Stop();
+				yield return null;
+			}
 			yield return null;
 		}
-		yield return null;
 	}
 }
