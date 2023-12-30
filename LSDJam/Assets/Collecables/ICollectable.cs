@@ -1,4 +1,7 @@
-public interface ICollectable
+namespace Collecables
 {
-    public void Collect();
+    public interface ICollectable
+    {
+        public void Collect();
+    }
 }

@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 5521114284817483472}
   - component: {fileID: 6122978665719160526}
   - component: {fileID: 7698951537650693932}
-  - component: {fileID: 6334718003859405942}
-  - component: {fileID: 6198897840500392356}
+  - component: {fileID: 2419155778504206972}
   m_Layer: 0
   m_Name: P_Glass
   m_TagString: Untagged
@@ -85,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6334718003859405942
+--- !u!65 &2419155778504206972
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,26 +103,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 0.91963106}
-  m_Center: {x: 0, y: 0, z: 0.040184572}
---- !u!65 &6198897840500392356
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 785903818924680194}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 0.88237983}
-  m_Center: {x: -0.000030500812, y: 0, z: -0.058810126}
+  m_Size: {x: 1, y: 1, z: 0.8764708}
+  m_Center: {x: -0.000030500812, y: 0, z: -0.061764628}

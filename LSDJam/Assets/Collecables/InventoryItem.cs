@@ -1,17 +1,20 @@
 using System;
 
-[Serializable]
-public class InventoryItem
+namespace Collecables
 {
-    public ItemData itemData;
-    public int itemQuantity;
-
-    public InventoryItem(ItemData item)
+    [Serializable]
+    public class InventoryItem
     {
-        itemData = item;
-        AddQuantity();
-    }
+        public ItemData itemData;
+        public int itemQuantity;
 
-    public void AddQuantity() => itemQuantity++;
-    public void SubtractQuantity() => itemQuantity--;
+        public InventoryItem(ItemData item)
+        {
+            itemData = item;
+            AddQuantity();
+        }
+
+        public void AddQuantity() => itemQuantity++;
+        public void SubtractQuantity() => itemQuantity--;
+    }
 }

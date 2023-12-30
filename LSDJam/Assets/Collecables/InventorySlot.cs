@@ -2,29 +2,32 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventorySlot : MonoBehaviour
+namespace Collecables
 {
-    public Image icon;
-    public TextMeshProUGUI quantity;
-
-    public void ClearSlot()
+    public class InventorySlot : MonoBehaviour
     {
-        icon.enabled = false;
-        quantity.enabled = false;
-    }
+        public Image icon;
+        public TextMeshProUGUI quantity;
 
-    public void DrawSlots(InventoryItem item)
-    {
-        if (item == null)
+        public void ClearSlot()
         {
-            ClearSlot();
-            return;
+            icon.enabled = false;
+            quantity.enabled = false;
         }
 
-        icon.enabled = true;
-        quantity.enabled = true;
+        public void DrawSlots(InventoryItem item)
+        {
+            if (item == null)
+            {
+                ClearSlot();
+                return;
+            }
 
-        icon.sprite = item.itemData.icon;
-        quantity.text = item.itemQuantity.ToString();
+            icon.enabled = true;
+            quantity.enabled = true;
+
+            icon.sprite = item.itemData.icon;
+            quantity.text = item.itemQuantity.ToString();
+        }
     }
 }
