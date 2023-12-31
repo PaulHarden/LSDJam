@@ -28,6 +28,11 @@ namespace Player
         }
     
         public void OnStartHover() => interactPrompt.enabled = true;
+        public void OnEndHover()
+        {
+            interactPrompt.enabled = false;
+            requiredPrompt.enabled = false;
+        }
 
         public virtual void OnInteract()
         {
@@ -59,12 +64,6 @@ namespace Player
             }
             //AudioController.Singleton.PlaySound(LockedSFX, 0.25f);
             requiredPrompt.enabled = true;
-        }
-
-        public void OnEndHover()
-        {
-            interactPrompt.enabled = false;
-            requiredPrompt.enabled = false;
         }
     }
 }
