@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 957ca8d99a9864e42a322bf3cd4c8b10,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 957ca8d99a9864e42a322bf3cd4c8b10,
         type: 3}
@@ -21,7 +21,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 957ca8d99a9864e42a322bf3cd4c8b10,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.509991
+      value: 15.769991
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 957ca8d99a9864e42a322bf3cd4c8b10,
         type: 3}
@@ -31,7 +31,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 957ca8d99a9864e42a322bf3cd4c8b10,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 957ca8d99a9864e42a322bf3cd4c8b10,
         type: 3}
@@ -66,10 +66,41 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 957ca8d99a9864e42a322bf3cd4c8b10,
         type: 3}
       propertyPath: m_Name
-      value: SM_roadback
+      value: P_roadback
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 957ca8d99a9864e42a322bf3cd4c8b10,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2337438228114924694}
   m_SourcePrefab: {fileID: 100100000, guid: 957ca8d99a9864e42a322bf3cd4c8b10, type: 3}
+--- !u!1 &6389002328506791936 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 957ca8d99a9864e42a322bf3cd4c8b10,
+    type: 3}
+  m_PrefabInstance: {fileID: 6082993197830063441}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2337438228114924694
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6389002328506791936}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 12.217945, y: 0.052269936, z: 2.8676758}
+  m_Center: {x: 0.00000023841858, y: 0.00000047683716, z: 0}
