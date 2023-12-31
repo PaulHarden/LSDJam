@@ -1,4 +1,4 @@
-﻿using Collecables;
+﻿using Collectables;
 using UnityEngine;
 using UnityEngine.UI;
 

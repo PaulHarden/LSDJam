@@ -1,4 +1,4 @@
-namespace Collecables
+namespace Collectables
 {
     public interface ICollectable
     {

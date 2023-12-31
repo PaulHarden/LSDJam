@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Player;
 using UnityEngine;
 
-namespace Collecables
+namespace Collectables
 {
     public class Inventory : MonoBehaviour
     {

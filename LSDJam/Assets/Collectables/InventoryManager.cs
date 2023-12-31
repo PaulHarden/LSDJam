@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Collecables
+namespace Collectables
 {
     public class InventoryManager : MonoBehaviour
     {

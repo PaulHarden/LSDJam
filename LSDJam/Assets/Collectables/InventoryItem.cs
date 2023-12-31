@@ -1,6 +1,6 @@
 using System;
 
-namespace Collecables
+namespace Collectables
 {
     [Serializable]
     public class InventoryItem

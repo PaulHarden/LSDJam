@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 8900000, guid: 619e305f5165a9946b7f72464e44ca4a, type: 3}
   m_Sun: {fileID: 2114283754330233425}
-  m_IndirectSpecularColor: {r: 0.029152213, g: 0.064445764, b: 0.12695098, a: 1}
+  m_IndirectSpecularColor: {r: 0.032966845, g: 0.053793624, b: 0.10893439, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -360,13 +360,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad2e6bc0ef08f6f419b225f8cf710211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteractPrompt: {fileID: 443422237}
-  RequiredPrompt: {fileID: 714154352}
-  RequiredItem: {fileID: 11400000, guid: ff9dcb2b8bc5f3d48a59371f83200206, type: 2}
-  RewardItem: {fileID: 2040638654729978101, guid: 132185360af36ad42bfdbbd3ed293fb7,
-    type: 3}
-  UnlockedSFX: {fileID: 8300000, guid: 1c1db5e3569a36d4bafc81011a41f25b, type: 3}
-  LockedSFX: {fileID: 8300000, guid: 8130a07b0674086419c84a214bbcaf83, type: 3}
+  interactPrompt: {fileID: 0}
+  requiredPrompt: {fileID: 0}
+  requiredItem: {fileID: 0}
+  rewardItem: {fileID: 0}
+  unlockedSfx: {fileID: 0}
+  lockedSfx: {fileID: 0}
 --- !u!1 &332271521
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,18 +565,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce1c080c00d48c74098bd3035f1f7643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &443422237 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4417438846906063153, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
-    type: 3}
-  m_PrefabInstance: {fileID: 5393215579111688471}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &485300252
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,18 +720,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.5, y: 1.5, z: 1.5}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &714154352 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8817934403426482046, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
-    type: 3}
-  m_PrefabInstance: {fileID: 5393215579111688471}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &931920077
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,13 +835,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad2e6bc0ef08f6f419b225f8cf710211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteractPrompt: {fileID: 443422237}
-  RequiredPrompt: {fileID: 714154352}
-  RequiredItem: {fileID: 0}
-  RewardItem: {fileID: 8823955508497652860, guid: 59ec838f5d58d2544add847e302b6aa1,
-    type: 3}
-  UnlockedSFX: {fileID: 8300000, guid: 1c1db5e3569a36d4bafc81011a41f25b, type: 3}
-  LockedSFX: {fileID: 8300000, guid: 8130a07b0674086419c84a214bbcaf83, type: 3}
+  interactPrompt: {fileID: 0}
+  requiredPrompt: {fileID: 0}
+  requiredItem: {fileID: 0}
+  rewardItem: {fileID: 0}
+  unlockedSfx: {fileID: 0}
+  lockedSfx: {fileID: 0}
 --- !u!65 &1764095435
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -1,5 +1,5 @@
 ﻿using System;
-using Collecables;
+using Collectables;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;

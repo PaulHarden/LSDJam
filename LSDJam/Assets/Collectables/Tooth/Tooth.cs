@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Collecables.Tooth
+namespace Collectables.Tooth
 {
     public class Tooth : MonoBehaviour, ICollectable
     {

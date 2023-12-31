@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Collecables.Key
+namespace Collectables.Key
 {
     public class Key : MonoBehaviour, ICollectable
     {

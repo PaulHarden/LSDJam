@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Collecables
+namespace Collectables
 {
     public class InventorySlot : MonoBehaviour
     {
