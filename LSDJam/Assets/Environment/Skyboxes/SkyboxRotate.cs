@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Environment
+namespace Environment.Skyboxes
 {
 	public class SkyboxRotate : MonoBehaviour
 	{
