@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Collectables;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class DestroyOnInteract : MonoBehaviour, IInteract
