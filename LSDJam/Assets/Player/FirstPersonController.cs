@@ -1,4 +1,5 @@
-﻿using Collectables;
+﻿using Audio;
+using Collectables;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,6 +11,7 @@ namespace Player
 #endif
 	public class FirstPersonController : MonoBehaviour
 	{
+		// Movement
 		[Header("Player")]
 		[Tooltip("Move speed of the character in m/s")]
 		public float MoveSpeed = 4.0f;
@@ -20,16 +22,26 @@ namespace Player
 		[Tooltip("Acceleration and deceleration")]
 		public float SpeedChangeRate = 10.0f;
 		private bool canSprint = true;
+		
+		// Health & Stamina
 		public float health;
 		public float stamina;
 		private float staminaMax = 100f;
 		public float staminaRate;
+		
+		// Pissing
 		public bool canPiss = true;
 		public float piss;
 		private float pissMax = 100f;
 		public float pissRate;
 		public GameObject PissFX;
 		private ParticleSystem.EmissionModule _emissionModule;
+
+		// Flashlight
+		private bool isOn;
+		public GameObject flashlight;
+		public AudioClip flashlightSoundOn;
+		public AudioClip flashlightSoundOff;
 
 		[Space(5)]
 		[Tooltip("The height the player can jump")]
@@ -130,6 +142,9 @@ namespace Player
 			// piss stream
 			piss = pissMax;
 			_emissionModule = PissFX.GetComponent<ParticleSystem>().emission;
+			
+			// flashlight
+			flashlight.SetActive(false);
 		}
 
 		private void Update()
@@ -139,6 +154,9 @@ namespace Player
 			Move();
 			//Crouch();
 			Piss();
+
+			if (Input.GetKeyDown(KeyCode.Tab))
+				Flashlight();
 			
 			if (input.pause)
 			{
@@ -328,6 +346,16 @@ namespace Player
 					piss += Time.deltaTime * pissRate;			
 				canPiss = true;
 			}
+		}
+
+		private void Flashlight()
+		{
+			isOn = !isOn;
+			flashlight.SetActive(isOn);
+			if (isOn)
+				AudioController.Singleton.PlaySound(flashlightSoundOn, 1);
+			else
+				AudioController.Singleton.PlaySound(flashlightSoundOff, 1);
 		}
 
 		public void PauseResume()
