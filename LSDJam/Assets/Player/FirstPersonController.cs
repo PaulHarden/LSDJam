@@ -1,5 +1,6 @@
 ﻿using Audio;
 using Collectables;
+using UI.HUD;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
