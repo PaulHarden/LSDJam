@@ -118,13 +118,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3cb8c015c26e5140b0d608e8b831de7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 0.25
-  BobCurve:
+  toothData: {fileID: 11400000, guid: 5ba8d686683699b45a2282eb044f08e7, type: 2}
+  rotationSpeed: 0.25
+  bobCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.004180908
-      value: 0.9929199
+      time: 0
+      value: 0.25
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -132,24 +133,24 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.5060491
-      value: 1.494711
-      inSlope: -0.0028055953
-      outSlope: -0.0028055953
+      time: 0.5
+      value: 0.75
+      inSlope: -0.0047455253
+      outSlope: -0.0047455253
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.40560216
-      outWeight: 0.34206247
+      inWeight: 0.16436249
+      outWeight: 0.33333334
     - serializedVersion: 3
-      time: 1.0041738
-      value: 0.9905531
-      inSlope: -0.026374985
-      outSlope: -0.026374985
+      time: 1
+      value: 0.25
+      inSlope: -0.025757916
+      outSlope: -0.025757916
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.38894987
+      inWeight: 0.21198153
       outWeight: 0
-    m_PreInfinity: 1
-    m_PostInfinity: 1
+    m_PreInfinity: 2
+    m_PostInfinity: 0
     m_RotationOrder: 4
-  toothData: {fileID: 11400000, guid: 5ba8d686683699b45a2282eb044f08e7, type: 2}
+  collectSound: {fileID: 0}

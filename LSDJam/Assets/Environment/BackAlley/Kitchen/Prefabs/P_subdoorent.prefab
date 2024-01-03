@@ -125,11 +125,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactPrompt: {fileID: 0}
-  requiredPrompt: {fileID: 0}
-  requiredItem: {fileID: 0}
-  rewardItem: {fileID: 0}
-  unlockedSfx: {fileID: 0}
-  lockedSfx: {fileID: 0}
+  openSound: {fileID: 8300000, guid: d49a892b735a7964a84eb358d0fd1ba9, type: 3}
+  closeSound: {fileID: 8300000, guid: eca7dcbd1620317488a901686dd3027c, type: 3}
 --- !u!95 &7217634317998107032
 Animator:
   serializedVersion: 7

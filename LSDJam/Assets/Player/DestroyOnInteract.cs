@@ -1,4 +1,5 @@
 ﻿using Collectables;
+using Player;
 using UnityEngine;
 using UnityEngine.UI;
 

@@ -30,9 +30,9 @@ Transform:
   m_GameObject: {fileID: 8823955508497652860}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -146,38 +146,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0176bd84948fd24b8a8a9bbba309dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 0.25
-  BobCurve:
+  keyData: {fileID: 11400000, guid: ff9dcb2b8bc5f3d48a59371f83200206, type: 2}
+  rotationSpeed: 0.25
+  bobCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.004180908
-      value: 0.9929199
-      inSlope: 0
-      outSlope: 0
+      time: 0
+      value: 0.25
+      inSlope: 0.04760628
+      outSlope: 0.04760628
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
-      outWeight: 0
+      inWeight: 0.33333334
+      outWeight: 0.19662058
     - serializedVersion: 3
-      time: 0.5060491
-      value: 1.494711
-      inSlope: -0.0028055953
-      outSlope: -0.0028055953
+      time: 0.5
+      value: 0.75
+      inSlope: -0.017063558
+      outSlope: -0.017063558
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.40560216
-      outWeight: 0.34206247
+      inWeight: 0.33333334
+      outWeight: 0.13671279
     - serializedVersion: 3
-      time: 1.0041738
-      value: 0.9905531
-      inSlope: -0.026374985
-      outSlope: -0.026374985
+      time: 1
+      value: 0.25
+      inSlope: -0.017510878
+      outSlope: -0.017510878
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.38894987
+      inWeight: 0.17511523
       outWeight: 0
-    m_PreInfinity: 1
-    m_PostInfinity: 1
+    m_PreInfinity: 2
+    m_PostInfinity: 0
     m_RotationOrder: 4
-  keyData: {fileID: 11400000, guid: ff9dcb2b8bc5f3d48a59371f83200206, type: 2}
+  collectSound: {fileID: 0}

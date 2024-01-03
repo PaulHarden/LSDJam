@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Player;
 using UnityEngine;
 
 namespace Collectables
@@ -13,14 +12,14 @@ namespace Collectables
 
         private void OnEnable()
         {
-            Interactable.OnInteracted += Subtract;
+            Chest.OnInteracted += Subtract;
             Tooth.Tooth.OnToothCollected += Add;
             Key.Key.OnKeyCollected += Add;
         }
 
         private void OnDisable()
         {
-            Interactable.OnInteracted -= Subtract;
+            Chest.OnInteracted -= Subtract;
             Tooth.Tooth.OnToothCollected -= Add;
             Key.Key.OnKeyCollected -= Add;
         }
