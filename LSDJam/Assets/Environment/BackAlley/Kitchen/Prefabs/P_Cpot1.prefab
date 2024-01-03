@@ -98,6 +98,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6143755273001803420, guid: 84186374d2bcbf843ac0aa176ba660eb,
         type: 3}
+      propertyPath: MaxDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143755273001803420, guid: 84186374d2bcbf843ac0aa176ba660eb,
+        type: 3}
+      propertyPath: MinDistance
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143755273001803420, guid: 84186374d2bcbf843ac0aa176ba660eb,
+        type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 1
       objectReference: {fileID: 0}
@@ -109,7 +119,7 @@ PrefabInstance:
     - target: {fileID: 6356380857318132046, guid: 84186374d2bcbf843ac0aa176ba660eb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.147
       objectReference: {fileID: 0}
     - target: {fileID: 6356380857318132046, guid: 84186374d2bcbf843ac0aa176ba660eb,
         type: 3}
