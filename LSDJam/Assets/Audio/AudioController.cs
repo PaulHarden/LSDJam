@@ -25,14 +25,14 @@ namespace Audio
 		public void PlaySound(AudioClip clip, float vol)
 		{
 			effectsSource.pitch = 1f;
-			effectsSource.PlayOneShot(clip);
+			effectsSource.PlayOneShot(clip, vol);
 		}
 
 		public void PlayRandomSound(AudioClip clip, float vol)
 		{
 			float randomPitch = Random.Range(minPitch, maxPitch);
 			effectsSource.pitch = randomPitch;
-			effectsSource.PlayOneShot(clip);
+			effectsSource.PlayOneShot(clip, vol);
 		}
 	
 		public void StopSound() => effectsSource.Stop();

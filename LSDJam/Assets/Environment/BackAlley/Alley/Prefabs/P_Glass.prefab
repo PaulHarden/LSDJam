@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5521114284817483472}
   - component: {fileID: 6122978665719160526}
   - component: {fileID: 7698951537650693932}
-  - component: {fileID: 2419155778504206972}
+  - component: {fileID: 3697296295335988604}
   m_Layer: 0
   m_Name: P_Glass
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.401, y: 1.749, z: 1.159}
-  m_LocalScale: {x: 0.004, y: 0.6, z: 0.93}
+  m_LocalScale: {x: 0.004, y: 1.5408787, z: 1.3327911}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2419155778504206972
+--- !u!65 &3697296295335988604
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,5 +103,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.70219684, z: 0.8764708}
-  m_Center: {x: -0.000030500812, y: 0.14890158, z: -0.061764643}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: -0.000030517578, y: 0, z: -0.00000029802322}
