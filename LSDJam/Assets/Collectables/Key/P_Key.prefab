@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7595921032854522403}
   - component: {fileID: 7239927215860300542}
   - component: {fileID: 1572904063961932834}
-  - component: {fileID: 707694347947374575}
+  - component: {fileID: 7123302250000712436}
   - component: {fileID: 6967533161835632510}
   - component: {fileID: 2552767729449397285}
   m_Layer: 0
@@ -86,8 +86,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &707694347947374575
-BoxCollider:
+--- !u!135 &7123302250000712436
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -105,7 +105,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5.066766, y: 2.800593, z: 1.8914837}
+  m_Radius: 5
   m_Center: {x: -0.33950138, y: 0.037266314, z: 0}
 --- !u!54 &6967533161835632510
 Rigidbody:
@@ -181,4 +181,4 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 0
     m_RotationOrder: 4
-  collectSound: {fileID: 0}
+  collectSound: {fileID: 8300000, guid: e4e0f8a5571e7604d9e1f2f86ab23783, type: 3}
