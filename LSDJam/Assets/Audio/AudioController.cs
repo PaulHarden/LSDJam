@@ -5,9 +5,9 @@ namespace Audio
 {
 	public class AudioController : MonoBehaviour
 	{
-		public static AudioController Singleton { get; set; }
-		[SerializeField] private AudioSource effectsSource;
-		[SerializeField] private AudioSource musicSource;
+		public static AudioController Singleton { get; set; } 
+		public AudioSource effectsSource;
+		public AudioSource musicSource;
 		public float minPitch, maxPitch;
 		private float _masterVolume;
 		private float _musicVolume;

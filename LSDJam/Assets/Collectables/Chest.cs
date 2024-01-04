@@ -45,13 +45,16 @@ namespace Collectables
             {
                 if (rewardItem != null)
                 {
+                    AudioController.Singleton.PlaySound(unlockedSound, 1f);
                     Instantiate(rewardItem, transform.position + _offset, Quaternion.identity);
                     Destroy(gameObject);
                     OnEndHover();
                     return;
                 }
             }
-            AudioController.Singleton.PlaySound(lockedSound, 1f);
+
+            if (!AudioController.Singleton.effectsSource.isPlaying)
+                AudioController.Singleton.PlaySound(lockedSound, 1f);
             requiredPrompt.enabled = true;
         }
     }

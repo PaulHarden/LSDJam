@@ -104,7 +104,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 4
+  m_Radius: 6
   m_Center: {x: -0.006147921, y: -0.31679392, z: 0.012924612}
 --- !u!114 &9139466231741779246
 MonoBehaviour:
@@ -153,4 +153,4 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 0
     m_RotationOrder: 4
-  collectSound: {fileID: 0}
+  collectSound: {fileID: 8300000, guid: 89e0188e802caf74a8e3a93a3691eaef, type: 3}

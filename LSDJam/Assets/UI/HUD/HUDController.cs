@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UI
+namespace UI.HUD
 {
     public class HUDController : MonoBehaviour
     {
@@ -12,12 +12,14 @@ namespace UI
         public Slider pissMeter;
         public Image[] itemSlots;
         public GameObject pauseMenu;
+        public Animator fade;
 
         private void Start()
         {
             _player = GetComponentInParent<FirstPersonController>();
             foreach (var itemSlot in itemSlots)
                 itemSlot.enabled = false;
+            fade.Play("A_FadeIn");
         }
 
         private void Update()
