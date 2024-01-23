@@ -5,9 +5,9 @@ namespace Audio
 {
 	public class AudioController : MonoBehaviour
 	{
-		public static AudioController Singleton { get; set; }
-		[SerializeField] private AudioSource effectsSource;
-		[SerializeField] private AudioSource musicSource;
+		public static AudioController Singleton { get; set; } 
+		public AudioSource effectsSource;
+		public AudioSource musicSource;
 		public float minPitch, maxPitch;
 		private float _masterVolume;
 		private float _musicVolume;
@@ -25,14 +25,14 @@ namespace Audio
 		public void PlaySound(AudioClip clip, float vol)
 		{
 			effectsSource.pitch = 1f;
-			effectsSource.PlayOneShot(clip);
+			effectsSource.PlayOneShot(clip, vol);
 		}
 
 		public void PlayRandomSound(AudioClip clip, float vol)
 		{
 			float randomPitch = Random.Range(minPitch, maxPitch);
 			effectsSource.pitch = randomPitch;
-			effectsSource.PlayOneShot(clip);
+			effectsSource.PlayOneShot(clip, vol);
 		}
 	
 		public void StopSound() => effectsSource.Stop();

@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 66ba159e8506f5e41887f5a7e3ac9402,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.3918843
+      value: 0.84188426
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 66ba159e8506f5e41887f5a7e3ac9402,
         type: 3}
@@ -21,7 +21,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 66ba159e8506f5e41887f5a7e3ac9402,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.9065925
+      value: 9.166593
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 66ba159e8506f5e41887f5a7e3ac9402,
         type: 3}
@@ -31,7 +31,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 66ba159e8506f5e41887f5a7e3ac9402,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 66ba159e8506f5e41887f5a7e3ac9402,
         type: 3}
@@ -66,10 +66,42 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 66ba159e8506f5e41887f5a7e3ac9402,
         type: 3}
       propertyPath: m_Name
-      value: SM_trashcan2
+      value: P_trashcan2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 66ba159e8506f5e41887f5a7e3ac9402,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4534983121370136070}
   m_SourcePrefab: {fileID: 100100000, guid: 66ba159e8506f5e41887f5a7e3ac9402, type: 3}
+--- !u!1 &2490887011092616454 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 66ba159e8506f5e41887f5a7e3ac9402,
+    type: 3}
+  m_PrefabInstance: {fileID: 3337168818190575703}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &4534983121370136070
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2490887011092616454}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7173145726706489650, guid: 66ba159e8506f5e41887f5a7e3ac9402, type: 3}
