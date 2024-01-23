@@ -15,13 +15,15 @@ namespace Collectables
             Chest.OnInteracted += Subtract;
             Tooth.Tooth.OnToothCollected += Add;
             Key.Key.OnKeyCollected += Add;
+            Fish.Fish.OnFishCollected += Add;
         }
 
         private void OnDisable()
         {
             Chest.OnInteracted -= Subtract;
-            Tooth.Tooth.OnToothCollected -= Add;
-            Key.Key.OnKeyCollected -= Add;
+            Tooth.Tooth.OnToothCollected -= Subtract;
+            Key.Key.OnKeyCollected -= Subtract;
+            Fish.Fish.OnFishCollected -= Subtract;
         }
 
         public void Add(ItemData itemData)

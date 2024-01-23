@@ -14,9 +14,16 @@ namespace Collectables
         public GameObject rewardItem;
         public AudioClip unlockedSound;
         public AudioClip lockedSound;
-        private Vector3 _offset = new(0,1.5f,0);
+        public Vector3 offset;
+        public bool destroyOnInteract;
+        private bool _itemDispensed;
 
-        private void Start() => requiredPrompt.enabled = false;
+        private void Start()
+        {
+            if (requiredPrompt != null)
+                requiredPrompt.enabled = false;
+        }
+
         public override void OnEndHover()
         {
             interactPrompt.enabled = false;
@@ -33,9 +40,15 @@ namespace Collectables
                     if (Inventory.inventory[i].itemData.id == requiredItem.id)
                     {
                         OnInteracted?.Invoke(Inventory.inventory[i].itemData);
-                        AudioController.Singleton.PlaySound(unlockedSound, 1f);
-                        Instantiate(rewardItem, transform.position + _offset, Quaternion.identity);
-                        Destroy(gameObject);
+                        if (!AudioController.Singleton.effectsSource.isPlaying)
+                            AudioController.Singleton.PlaySound(unlockedSound, 1f);
+                        if (!_itemDispensed)
+                        {
+                            Instantiate(rewardItem, transform.position + offset, Quaternion.identity);
+                            _itemDispensed = true;
+                            if (destroyOnInteract)
+                                Destroy(gameObject);    
+                        }
                         OnEndHover();
                         return;
                     }
@@ -45,16 +58,23 @@ namespace Collectables
             {
                 if (rewardItem != null)
                 {
-                    AudioController.Singleton.PlaySound(unlockedSound, 1f);
-                    Instantiate(rewardItem, transform.position + _offset, Quaternion.identity);
-                    Destroy(gameObject);
+                    if (!AudioController.Singleton.effectsSource.isPlaying)
+                        AudioController.Singleton.PlaySound(unlockedSound, 1f);
+                    if (!_itemDispensed)
+                    {
+                        Instantiate(rewardItem, transform.position + offset, Quaternion.identity);
+                        _itemDispensed = true;
+                        if (destroyOnInteract)
+                            Destroy(gameObject);                        
+                    }
                     OnEndHover();
                     return;
                 }
             }
 
-            if (!AudioController.Singleton.effectsSource.isPlaying)
-                AudioController.Singleton.PlaySound(lockedSound, 1f);
+            if (lockedSound != null)
+                if (!AudioController.Singleton.effectsSource.isPlaying)
+                    AudioController.Singleton.PlaySound(lockedSound, 1f);
             requiredPrompt.enabled = true;
         }
     }
