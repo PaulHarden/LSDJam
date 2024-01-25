@@ -172,7 +172,14 @@ namespace Player
 		{
 			// set sphere position, with offset
 			Vector3 spherePosition = new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z);
-			Grounded = Physics.CheckSphere(spherePosition, GroundedRadius, GroundLayers, QueryTriggerInteraction.Ignore);
+			Collider[] col = Physics.OverlapSphere(spherePosition, GroundedRadius);
+			for (int i = 0; i < col.Length; i++)
+			{
+				if (!col[0].CompareTag("Walls"))
+					Grounded = Physics.CheckSphere(spherePosition, GroundedRadius, GroundLayers, QueryTriggerInteraction.Ignore);
+				else
+					Grounded = false;
+			}
 		}
 
 		private void CameraRotation()
