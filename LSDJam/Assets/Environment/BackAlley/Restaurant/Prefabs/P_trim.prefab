@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 955e934cfd9c71041ad86b4a54631c37,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.496321
+      value: -4.0463214
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 955e934cfd9c71041ad86b4a54631c37,
         type: 3}
@@ -21,7 +21,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 955e934cfd9c71041ad86b4a54631c37,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.44955122
+      value: 6.810449
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 955e934cfd9c71041ad86b4a54631c37,
         type: 3}
@@ -31,7 +31,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 955e934cfd9c71041ad86b4a54631c37,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 955e934cfd9c71041ad86b4a54631c37,
         type: 3}
@@ -66,7 +66,12 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 955e934cfd9c71041ad86b4a54631c37,
         type: 3}
       propertyPath: m_Name
-      value: SM_trim
+      value: P_trim
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 955e934cfd9c71041ad86b4a54631c37,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

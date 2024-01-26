@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 988a3c002d7b12f4daaf5c9c35f58024,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.138424
+      value: -9.688424
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 988a3c002d7b12f4daaf5c9c35f58024,
         type: 3}
@@ -21,7 +21,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 988a3c002d7b12f4daaf5c9c35f58024,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.455729
+      value: 2.8042712
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 988a3c002d7b12f4daaf5c9c35f58024,
         type: 3}
@@ -31,7 +31,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 988a3c002d7b12f4daaf5c9c35f58024,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 988a3c002d7b12f4daaf5c9c35f58024,
         type: 3}
@@ -128,3 +128,5 @@ MonoBehaviour:
     type: 3}
   unlockedSound: {fileID: 8300000, guid: a1341ea9661365841a2b21cf5a1305d5, type: 3}
   lockedSound: {fileID: 8300000, guid: a1341ea9661365841a2b21cf5a1305d5, type: 3}
+  offset: {x: 0, y: 0, z: 0.25}
+  destroyOnInteract: 0
