@@ -7966,6 +7966,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 3982076764298303397, guid: 1b3d942c89556c341b33ad06c5e31b8e, type: 3}
     - {fileID: 7217634317998107032, guid: 1b3d942c89556c341b33ad06c5e31b8e, type: 3}
+    - {fileID: 5878578181169413446, guid: 1b3d942c89556c341b33ad06c5e31b8e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -7993,7 +7994,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactPrompt: {fileID: 353957612}
-  requiredItem: {fileID: 0}
+  requiredPrompt: {fileID: 5393215579111688472}
+  requiredItem: {fileID: 11400000, guid: ff9dcb2b8bc5f3d48a59371f83200206, type: 2}
+  rewardItem: {fileID: 0}
+  unlockedSound: {fileID: 8300000, guid: d49a892b735a7964a84eb358d0fd1ba9, type: 3}
+  lockedSound: {fileID: 8300000, guid: a085cc6a0ef11f34cad6d845b1f1a0ef, type: 3}
+  offset: {x: 0, y: 0, z: 0}
+  destroyOnInteract: 0
 --- !u!4 &1005360734 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4871970575627708008, guid: 1b3d942c89556c341b33ad06c5e31b8e,
