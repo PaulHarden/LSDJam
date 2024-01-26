@@ -943,6 +943,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_subCEMblock
       objectReference: {fileID: 0}
+    - target: {fileID: 5593307830490970602, guid: 19d7cb0480212ee4eafb31bcf45e6509,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5357,6 +5362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnPoint: {fileID: 1897317765}
+  killSound: {fileID: 8300000, guid: 92b2654686f21bf4bb62b9dc677ef3f8, type: 3}
 --- !u!65 &649720247
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5515,16 +5521,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_subwall1
       objectReference: {fileID: 0}
-    - target: {fileID: 2413955863040509956, guid: 322a0778e73a669408a025b0f63539a5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2413955863040509956, guid: 322a0778e73a669408a025b0f63539a5,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
     - target: {fileID: 3083779087205929662, guid: 322a0778e73a669408a025b0f63539a5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5575,11 +5571,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4215620358338767313, guid: 322a0778e73a669408a025b0f63539a5,
-        type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 810e0a2571970be4ca438bc603a78b6f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6681,6 +6672,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnPoint: {fileID: 606759439}
+  killSound: {fileID: 8300000, guid: 92b2654686f21bf4bb62b9dc677ef3f8, type: 3}
 --- !u!65 &787828060
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15776,16 +15768,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_subwall2
       objectReference: {fileID: 0}
-    - target: {fileID: 3452012723557231764, guid: 78d47be3e46a4704aa4281baa4c08ac0,
-        type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
-    - target: {fileID: 3812577702254103873, guid: 78d47be3e46a4704aa4281baa4c08ac0,
-        type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 810e0a2571970be4ca438bc603a78b6f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
