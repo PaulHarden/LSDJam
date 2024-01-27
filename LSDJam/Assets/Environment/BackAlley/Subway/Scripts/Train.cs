@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Environment
+namespace Environment.BackAlley.Subway.Scripts
 {
     public class Train : MonoBehaviour
     {

@@ -5,7 +5,7 @@ using UI.HUD;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Player
+namespace Environment
 {
     public class SceneTransition : Chest
     {
