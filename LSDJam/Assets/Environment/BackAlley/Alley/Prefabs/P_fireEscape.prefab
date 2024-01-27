@@ -11,17 +11,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 09ce850d893eb0d419f3e368aff26c4c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.5160732
+      value: -0.06607324
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 09ce850d893eb0d419f3e368aff26c4c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.5751987
+      value: 8.02
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 09ce850d893eb0d419f3e368aff26c4c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.7712708
+      value: 12.031271
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 09ce850d893eb0d419f3e368aff26c4c,
         type: 3}
@@ -31,7 +31,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 09ce850d893eb0d419f3e368aff26c4c,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 09ce850d893eb0d419f3e368aff26c4c,
         type: 3}
@@ -66,7 +66,12 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 09ce850d893eb0d419f3e368aff26c4c,
         type: 3}
       propertyPath: m_Name
-      value: SM_fireEscape
+      value: P_fireEscape
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 09ce850d893eb0d419f3e368aff26c4c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
