@@ -1,6 +1,7 @@
 using Audio;
 using Player;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 namespace Collectables
@@ -70,7 +71,7 @@ namespace Collectables
                         Instantiate(rewardItem, transform.position + offset, Quaternion.identity);
                         _itemDispensed = true;
                         if (destroyOnInteract)
-                            Destroy(gameObject);                        
+                            Destroy(gameObject);
                     }
                     OnEndHover();
                     return;

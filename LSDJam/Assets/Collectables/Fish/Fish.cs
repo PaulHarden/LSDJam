@@ -22,7 +22,7 @@ namespace Collectables.Fish
         {
             OnFishCollected?.Invoke(fishData);
             AudioController.Singleton.PlaySound(collectSound, 1f);
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
         }
     }
 }

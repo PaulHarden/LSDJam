@@ -22,7 +22,7 @@ namespace Collectables.Key
         {
             OnKeyCollected?.Invoke(keyData);
             AudioController.Singleton.PlaySound(collectSound, 1f);
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
         }
     }
 }
