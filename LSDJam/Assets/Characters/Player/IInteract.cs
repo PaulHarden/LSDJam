@@ -1,4 +1,4 @@
-﻿namespace Player
+﻿namespace Characters.Player
 {
     public interface IInteract
     {

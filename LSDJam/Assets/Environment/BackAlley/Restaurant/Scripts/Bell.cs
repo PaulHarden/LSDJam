@@ -1,4 +1,4 @@
-using Player;
+using Characters.Player;
 using UnityEngine;
 
 namespace Environment.BackAlley.Restaurant.Scripts
