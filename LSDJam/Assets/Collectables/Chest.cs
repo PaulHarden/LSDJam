@@ -1,5 +1,5 @@
 using Audio;
-using Player;
+using Characters.Player;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;

@@ -1,10 +1,9 @@
 ﻿using Audio;
 using Collectables;
-using UI.HUD;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Player
+namespace Characters.Player
 {
 	[RequireComponent(typeof(CharacterController))]
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED

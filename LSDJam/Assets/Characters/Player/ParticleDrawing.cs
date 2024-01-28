@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Player
+namespace Characters.Player
 {
     public class ParticleDrawing : MonoBehaviour {
         private Texture2D workingTexture;

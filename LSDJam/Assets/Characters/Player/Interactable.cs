@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace Player
+namespace Characters.Player
 {
     public class Interactable : MonoBehaviour, IInteract
     {
