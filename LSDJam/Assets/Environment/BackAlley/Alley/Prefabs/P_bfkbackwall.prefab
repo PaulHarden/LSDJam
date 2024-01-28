@@ -68,6 +68,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_bfkbackwall
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 69e6edad7c0c9484db3bf6b79bb5f90a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

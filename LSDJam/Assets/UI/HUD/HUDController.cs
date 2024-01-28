@@ -1,4 +1,4 @@
-﻿using Player;
+﻿using Characters.Player;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +7,7 @@ namespace UI.HUD
     public class HUDController : MonoBehaviour
     {
         private FirstPersonController _player;
-        public Slider healthMeter;
+        //public Slider healthMeter;
         public Slider staminaMeter;
         public Slider pissMeter;
         public Image[] itemSlots;
@@ -24,7 +24,7 @@ namespace UI.HUD
 
         private void Update()
         {
-            healthMeter.value = _player.health;
+            //healthMeter.value = _player.health;
             staminaMeter.value = _player.stamina;
             pissMeter.value = _player.piss;
 

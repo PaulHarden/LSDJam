@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,13 +6,8 @@ namespace Collectables
     public class InventorySlot : MonoBehaviour
     {
         public Image icon;
-        public TextMeshProUGUI quantity;
 
-        public void ClearSlot()
-        {
-            icon.enabled = false;
-            quantity.enabled = false;
-        }
+        public void ClearSlot() => icon.enabled = false;
 
         public void DrawSlots(InventoryItem item)
         {
@@ -22,12 +16,9 @@ namespace Collectables
                 ClearSlot();
                 return;
             }
-
+            
             icon.enabled = true;
-            quantity.enabled = true;
-
             icon.sprite = item.itemData.icon;
-            quantity.text = item.itemQuantity.ToString();
         }
     }
 }

@@ -1,4 +1,4 @@
-using Player;
+using Characters.Player;
 using UnityEngine;
 
 namespace Environment.Door
@@ -20,10 +20,11 @@ namespace Environment.Door
         public override void OnInteract()
         {
             _isOpen = !_isOpen;
-            _anim.SetTrigger("OpenClose");
+            if (_anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
+                _anim.SetTrigger("OpenClose");    
         }
 
-        private void OpenSound() => _audio.PlayOneShot(openSound);//AudioController.Singleton.PlaySound(openSound, 1f);
-        private void CloseSound() => _audio.PlayOneShot(closeSound);//AudioController.Singleton.PlaySound(closeSound, 1f));
+        private void OpenSound() => _audio.PlayOneShot(openSound);
+        private void CloseSound() => _audio.PlayOneShot(closeSound);
     }
 }

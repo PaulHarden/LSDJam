@@ -11,7 +11,7 @@ namespace Collectables.Fish
         public AudioClip collectSound;
         public static event HandleFishCollected OnFishCollected;
         public delegate void HandleFishCollected(ItemData itemData);
-        
+
         private void Update()
         {
             transform.Rotate(0, rotationSpeed, 0);
@@ -22,7 +22,7 @@ namespace Collectables.Fish
         {
             OnFishCollected?.Invoke(fishData);
             AudioController.Singleton.PlaySound(collectSound, 1f);
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
         }
     }
 }

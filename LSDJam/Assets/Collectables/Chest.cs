@@ -1,6 +1,7 @@
 using Audio;
-using Player;
+using Characters.Player;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 namespace Collectables
@@ -12,16 +13,21 @@ namespace Collectables
         public Image requiredPrompt;
         public ItemData requiredItem;
         public GameObject rewardItem;
+        private bool _itemDispensed;
         public AudioClip unlockedSound;
         public AudioClip lockedSound;
         public Vector3 offset;
         public bool destroyOnInteract;
-        private bool _itemDispensed;
-
+        public bool changeOnInteract;
+        public GameObject changedObject;
+        
         private void Start()
         {
             if (requiredPrompt != null)
                 requiredPrompt.enabled = false;
+
+            if (changeOnInteract)
+                changedObject.SetActive(false);
         }
 
         public override void OnEndHover()
@@ -65,7 +71,7 @@ namespace Collectables
                         Instantiate(rewardItem, transform.position + offset, Quaternion.identity);
                         _itemDispensed = true;
                         if (destroyOnInteract)
-                            Destroy(gameObject);                        
+                            Destroy(gameObject);
                     }
                     OnEndHover();
                     return;
@@ -76,6 +82,9 @@ namespace Collectables
                 if (!AudioController.Singleton.effectsSource.isPlaying)
                     AudioController.Singleton.PlaySound(lockedSound, 1f);
             requiredPrompt.enabled = true;
+
+            if (changeOnInteract)
+                changedObject.SetActive(true);
         }
     }
 }

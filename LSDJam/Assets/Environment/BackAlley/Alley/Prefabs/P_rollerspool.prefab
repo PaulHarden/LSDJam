@@ -13,6 +13,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_roller
       objectReference: {fileID: 0}
+    - target: {fileID: 2597153420896304281, guid: 49fe5f3ae5d4da14fbfbfeb7e384a562,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
     - target: {fileID: 3405040083198715427, guid: 49fe5f3ae5d4da14fbfbfeb7e384a562,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -66,8 +71,39 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2597153420896304281, guid: 49fe5f3ae5d4da14fbfbfeb7e384a562,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1205630983409392825}
   m_SourcePrefab: {fileID: 100100000, guid: 49fe5f3ae5d4da14fbfbfeb7e384a562, type: 3}
+--- !u!1 &3460229972201025366 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2597153420896304281, guid: 49fe5f3ae5d4da14fbfbfeb7e384a562,
+    type: 3}
+  m_PrefabInstance: {fileID: 1445591250115056591}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1205630983409392825
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3460229972201025366}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.052168608, y: 0.55778265, z: 3.7037287}
+  m_Center: {x: 0.00080525875, y: -0.008269548, z: 0.0000011324883}
 --- !u!4 &4273604330608915948 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3405040083198715427, guid: 49fe5f3ae5d4da14fbfbfeb7e384a562,
@@ -141,6 +177,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: P_rollerspool
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0c6765701185ad24e8fcd7aaa45d563b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
