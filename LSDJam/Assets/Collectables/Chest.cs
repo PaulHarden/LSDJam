@@ -53,7 +53,10 @@ namespace Collectables
                             Instantiate(rewardItem, transform.position + offset, Quaternion.identity);
                             _itemDispensed = true;
                             if (destroyOnInteract)
-                                Destroy(gameObject);    
+                                Destroy(gameObject);
+                            
+                            if (changeOnInteract)
+                                changedObject.SetActive(true);
                         }
                         OnEndHover();
                         return;
@@ -82,9 +85,6 @@ namespace Collectables
                 if (!AudioController.Singleton.effectsSource.isPlaying)
                     AudioController.Singleton.PlaySound(lockedSound, 1f);
             requiredPrompt.enabled = true;
-
-            if (changeOnInteract)
-                changedObject.SetActive(true);
         }
     }
 }
