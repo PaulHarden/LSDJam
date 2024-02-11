@@ -124,6 +124,7 @@ namespace Characters.Player
 
 		private void Start()
 		{
+			Cursor.lockState = CursorLockMode.Locked;
 			_controller = GetComponent<CharacterController>();
 			input = GetComponent<StarterAssetsInputs>();
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
@@ -384,8 +385,6 @@ namespace Characters.Player
 				isPaused = false;
 			}
 		}
-
-		public void Quit() => Application.Quit();
 
 		private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
 		{
