@@ -1,5 +1,6 @@
 ﻿using Characters.Player;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace UI.HUD
@@ -13,9 +14,11 @@ namespace UI.HUD
         public Image[] itemSlots;
         public GameObject pauseMenu;
         public Animator fade;
+        public GameObject confirmationPrompt;
 
         private void Start()
         {
+            HidePrompt();
             _player = GetComponentInParent<FirstPersonController>();
             foreach (var itemSlot in itemSlots)
                 itemSlot.enabled = false;
@@ -33,5 +36,10 @@ namespace UI.HUD
             else
                 pauseMenu.SetActive(false);
         }
+
+        public void ShowPrompt() => confirmationPrompt.SetActive(true);
+        public void HidePrompt() => confirmationPrompt.SetActive(false);
+
+        public void ReturnToMainMenu() => SceneManager.LoadScene("MainMenu");
     }
 }
