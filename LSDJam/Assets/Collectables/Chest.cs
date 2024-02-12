@@ -45,8 +45,10 @@ namespace Collectables
                     if (Inventory.inventory[i].itemData.id == requiredItem.id)
                     {
                         OnInteracted?.Invoke(Inventory.inventory[i].itemData);
+                        
                         if (!AudioController.Singleton.effectsSource.isPlaying)
                             AudioController.Singleton.PlaySound(unlockedSound, 1f);
+                        
                         if (!_itemDispensed)
                         {
                             Instantiate(rewardItem, transform.position + offset, Quaternion.identity);
@@ -71,6 +73,9 @@ namespace Collectables
                         AudioController.Singleton.PlaySound(unlockedSound, 1f);
                     if (!_itemDispensed)
                     {
+                        if (GetComponent<Animator>())
+                            GetComponent<Animator>().SetTrigger($"Open");
+                        
                         Instantiate(rewardItem, transform.position + offset, Quaternion.identity);
                         _itemDispensed = true;
                         if (destroyOnInteract)
@@ -87,6 +92,7 @@ namespace Collectables
             if (lockedSound != null)
                 if (!AudioController.Singleton.effectsSource.isPlaying)
                     AudioController.Singleton.PlaySound(lockedSound, 1f);
+            
             if (requiredItem != null && _itemDispensed == false)
                 requiredPrompt.enabled = true;
         }

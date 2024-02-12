@@ -187,7 +187,7 @@ MonoBehaviour:
   requiredPrompt: {fileID: 0}
   requiredItem: {fileID: 0}
   rewardItem: {fileID: 0}
-  unlockedSound: {fileID: 0}
+  unlockedSound: {fileID: 8300000, guid: 18297bdcf07795e4784ea247209369a2, type: 3}
   lockedSound: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}
   destroyOnInteract: 0
