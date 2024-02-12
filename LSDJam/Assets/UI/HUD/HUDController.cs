@@ -11,6 +11,8 @@ namespace UI.HUD
         //public Slider healthMeter;
         public Slider staminaMeter;
         public Slider pissMeter;
+        public Image flashlightIcon;
+        public Sprite flashlightOn, flashlightOff;
         public Image[] itemSlots;
         public GameObject pauseMenu;
         public Animator fade;
@@ -35,6 +37,11 @@ namespace UI.HUD
                 pauseMenu.SetActive(true);
             else
                 pauseMenu.SetActive(false);
+
+            if (_player.flashlight.activeInHierarchy)
+                flashlightIcon.sprite = flashlightOn;
+            else
+                flashlightIcon.sprite = flashlightOff;
         }
 
         public void ShowPrompt() => confirmationPrompt.SetActive(true);
