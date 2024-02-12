@@ -1,7 +1,6 @@
 using Audio;
 using Characters.Player;
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 namespace Collectables
@@ -26,7 +25,7 @@ namespace Collectables
             if (requiredPrompt != null)
                 requiredPrompt.enabled = false;
 
-            if (changeOnInteract)
+            if (changeOnInteract && changedObject != null)
                 changedObject.SetActive(false);
         }
 
@@ -54,9 +53,10 @@ namespace Collectables
                             _itemDispensed = true;
                             if (destroyOnInteract)
                                 Destroy(gameObject);
-                            
+
                             if (changeOnInteract)
-                                changedObject.SetActive(true);
+                                if (changedObject != null)
+                                    changedObject.SetActive(true);
                         }
                         OnEndHover();
                         return;
@@ -81,10 +81,14 @@ namespace Collectables
                 }
             }
 
+            if (GetComponent<Animator>())
+                GetComponent<Animator>().SetTrigger($"Open");
+            
             if (lockedSound != null)
                 if (!AudioController.Singleton.effectsSource.isPlaying)
                     AudioController.Singleton.PlaySound(lockedSound, 1f);
-            requiredPrompt.enabled = true;
+            if (requiredItem != null && _itemDispensed == false)
+                requiredPrompt.enabled = true;
         }
     }
 }

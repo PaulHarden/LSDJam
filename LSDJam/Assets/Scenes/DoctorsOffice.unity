@@ -4582,6 +4582,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 177460233}
     m_Modifications:
+    - target: {fileID: 7564029753459463393, guid: 8c8dcb17308c46f4db315bc18c2b08ed,
+        type: 3}
+      propertyPath: interactPrompt
+      value: 
+      objectReference: {fileID: 271893166}
     - target: {fileID: 8586385288311786682, guid: 8c8dcb17308c46f4db315bc18c2b08ed,
         type: 3}
       propertyPath: m_Name
@@ -4638,7 +4643,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1663001806429779115, guid: 8c8dcb17308c46f4db315bc18c2b08ed, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c8dcb17308c46f4db315bc18c2b08ed, type: 3}
@@ -4877,6 +4883,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 177460233}
     m_Modifications:
+    - target: {fileID: 7564029753459463393, guid: 8c8dcb17308c46f4db315bc18c2b08ed,
+        type: 3}
+      propertyPath: interactPrompt
+      value: 
+      objectReference: {fileID: 271893166}
     - target: {fileID: 8586385288311786682, guid: 8c8dcb17308c46f4db315bc18c2b08ed,
         type: 3}
       propertyPath: m_Name
@@ -4933,7 +4944,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1663001806429779115, guid: 8c8dcb17308c46f4db315bc18c2b08ed, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c8dcb17308c46f4db315bc18c2b08ed, type: 3}
@@ -7620,6 +7632,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 177460233}
     m_Modifications:
+    - target: {fileID: 7564029753459463393, guid: 8c8dcb17308c46f4db315bc18c2b08ed,
+        type: 3}
+      propertyPath: interactPrompt
+      value: 
+      objectReference: {fileID: 271893166}
     - target: {fileID: 8586385288311786682, guid: 8c8dcb17308c46f4db315bc18c2b08ed,
         type: 3}
       propertyPath: m_Name
@@ -7676,7 +7693,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1663001806429779115, guid: 8c8dcb17308c46f4db315bc18c2b08ed, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c8dcb17308c46f4db315bc18c2b08ed, type: 3}
@@ -7927,6 +7945,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 177460233}
     m_Modifications:
+    - target: {fileID: 7564029753459463393, guid: 8c8dcb17308c46f4db315bc18c2b08ed,
+        type: 3}
+      propertyPath: interactPrompt
+      value: 
+      objectReference: {fileID: 271893166}
     - target: {fileID: 8586385288311786682, guid: 8c8dcb17308c46f4db315bc18c2b08ed,
         type: 3}
       propertyPath: m_Name
@@ -7983,7 +8006,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1663001806429779115, guid: 8c8dcb17308c46f4db315bc18c2b08ed, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c8dcb17308c46f4db315bc18c2b08ed, type: 3}
@@ -9780,6 +9804,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 177460233}
     m_Modifications:
+    - target: {fileID: 7564029753459463393, guid: 8c8dcb17308c46f4db315bc18c2b08ed,
+        type: 3}
+      propertyPath: interactPrompt
+      value: 
+      objectReference: {fileID: 271893166}
     - target: {fileID: 8586385288311786682, guid: 8c8dcb17308c46f4db315bc18c2b08ed,
         type: 3}
       propertyPath: m_Name
@@ -9836,7 +9865,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1663001806429779115, guid: 8c8dcb17308c46f4db315bc18c2b08ed, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c8dcb17308c46f4db315bc18c2b08ed, type: 3}
@@ -9854,6 +9884,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 177460233}
     m_Modifications:
+    - target: {fileID: 7564029753459463393, guid: 8c8dcb17308c46f4db315bc18c2b08ed,
+        type: 3}
+      propertyPath: interactPrompt
+      value: 
+      objectReference: {fileID: 271893166}
     - target: {fileID: 8586385288311786682, guid: 8c8dcb17308c46f4db315bc18c2b08ed,
         type: 3}
       propertyPath: m_Name
@@ -9910,7 +9945,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1663001806429779115, guid: 8c8dcb17308c46f4db315bc18c2b08ed, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c8dcb17308c46f4db315bc18c2b08ed, type: 3}
@@ -10599,6 +10635,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 177460233}
     m_Modifications:
+    - target: {fileID: 7564029753459463393, guid: 8c8dcb17308c46f4db315bc18c2b08ed,
+        type: 3}
+      propertyPath: interactPrompt
+      value: 
+      objectReference: {fileID: 271893166}
     - target: {fileID: 8586385288311786682, guid: 8c8dcb17308c46f4db315bc18c2b08ed,
         type: 3}
       propertyPath: m_Name
@@ -10655,7 +10696,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1663001806429779115, guid: 8c8dcb17308c46f4db315bc18c2b08ed, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c8dcb17308c46f4db315bc18c2b08ed, type: 3}
@@ -14369,6 +14411,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 177460233}
     m_Modifications:
+    - target: {fileID: 4206198028948840513, guid: 8c8dcb17308c46f4db315bc18c2b08ed,
+        type: 3}
+      propertyPath: interactPrompt
+      value: 
+      objectReference: {fileID: 271893166}
+    - target: {fileID: 4206198028948840513, guid: 8c8dcb17308c46f4db315bc18c2b08ed,
+        type: 3}
+      propertyPath: requiredPrompt
+      value: 
+      objectReference: {fileID: 1383653909}
     - target: {fileID: 8586385288311786682, guid: 8c8dcb17308c46f4db315bc18c2b08ed,
         type: 3}
       propertyPath: m_Name
