@@ -504,11 +504,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_craptop
       objectReference: {fileID: 0}
-    - target: {fileID: 5800795217648683540, guid: 6f893956d782b6c45acf47ecdc271539,
-        type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: ddf54b35e5a58f24f8217073ccdc30b5, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5166,11 +5161,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_craptop (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 5800795217648683540, guid: 6f893956d782b6c45acf47ecdc271539,
-        type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: ddf54b35e5a58f24f8217073ccdc30b5, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12029,11 +12019,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_monitor (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 6017073335502571587, guid: 919085e3382dffb4ea1079ed8d62a57e,
-        type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: ddf54b35e5a58f24f8217073ccdc30b5, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
