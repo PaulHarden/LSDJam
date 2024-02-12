@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace Characters.Mr_Chun
+namespace Characters
 {
-    public class MrChun : MonoBehaviour
+    public class NPC : MonoBehaviour
     {
         private Animator _anim;
         public GameObject goal;
@@ -10,8 +10,9 @@ namespace Characters.Mr_Chun
 
         private void Update()
         {
-            if (goal.activeInHierarchy)
-                _anim.SetTrigger($"Happy");
+            if (goal != null)
+                if (goal.activeInHierarchy)
+                    _anim.SetTrigger($"Happy");
         }
 
         private void OnParticleCollision(GameObject other) => _anim.SetTrigger($"Angry");

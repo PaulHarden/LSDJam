@@ -16,6 +16,7 @@ namespace Collectables
             Tooth.Tooth.OnToothCollected += Add;
             Key.Key.OnKeyCollected += Add;
             Fish.Fish.OnFishCollected += Add;
+            Pizza.PizzaSlice.OnPizzaCollected += Add;
         }
 
         private void OnDisable()
@@ -24,6 +25,7 @@ namespace Collectables
             Tooth.Tooth.OnToothCollected -= Subtract;
             Key.Key.OnKeyCollected -= Subtract;
             Fish.Fish.OnFishCollected -= Subtract;
+            Pizza.PizzaSlice.OnPizzaCollected -= Subtract;
         }
 
         public void Add(ItemData itemData)
