@@ -1,7 +1,6 @@
 using Audio;
 using Characters.Player;
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 namespace Collectables
@@ -26,7 +25,7 @@ namespace Collectables
             if (requiredPrompt != null)
                 requiredPrompt.enabled = false;
 
-            if (changeOnInteract)
+            if (changeOnInteract && changedObject != null)
                 changedObject.SetActive(false);
         }
 
@@ -46,14 +45,20 @@ namespace Collectables
                     if (Inventory.inventory[i].itemData.id == requiredItem.id)
                     {
                         OnInteracted?.Invoke(Inventory.inventory[i].itemData);
+                        
                         if (!AudioController.Singleton.effectsSource.isPlaying)
                             AudioController.Singleton.PlaySound(unlockedSound, 1f);
+                        
                         if (!_itemDispensed)
                         {
                             Instantiate(rewardItem, transform.position + offset, Quaternion.identity);
                             _itemDispensed = true;
                             if (destroyOnInteract)
-                                Destroy(gameObject);    
+                                Destroy(gameObject);
+
+                            if (changeOnInteract)
+                                if (changedObject != null)
+                                    changedObject.SetActive(true);
                         }
                         OnEndHover();
                         return;
@@ -68,6 +73,9 @@ namespace Collectables
                         AudioController.Singleton.PlaySound(unlockedSound, 1f);
                     if (!_itemDispensed)
                     {
+                        if (GetComponent<Animator>())
+                            GetComponent<Animator>().SetTrigger($"Open");
+                        
                         Instantiate(rewardItem, transform.position + offset, Quaternion.identity);
                         _itemDispensed = true;
                         if (destroyOnInteract)
@@ -78,13 +86,15 @@ namespace Collectables
                 }
             }
 
+            if (GetComponent<Animator>())
+                GetComponent<Animator>().SetTrigger($"Open");
+            
             if (lockedSound != null)
                 if (!AudioController.Singleton.effectsSource.isPlaying)
                     AudioController.Singleton.PlaySound(lockedSound, 1f);
-            requiredPrompt.enabled = true;
-
-            if (changeOnInteract)
-                changedObject.SetActive(true);
+            
+            if (requiredItem != null && _itemDispensed == false)
+                requiredPrompt.enabled = true;
         }
     }
 }
