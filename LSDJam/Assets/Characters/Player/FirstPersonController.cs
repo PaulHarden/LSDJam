@@ -351,7 +351,7 @@ namespace Characters.Player
 			{
 				_emissionModule.enabled = false;
 				if (piss <= pissMax)
-					piss += Time.deltaTime * pissRate;			
+					piss += Time.deltaTime * pissRate / 10;
 				canPiss = true;
 			}
 		}
