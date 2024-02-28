@@ -68,6 +68,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_Tree8
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 69e9c8f61bc0eaf40b74e13acb2c03e2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
