@@ -12,6 +12,7 @@ namespace Audio
 		private float _masterVolume;
 		private float _musicVolume;
 		private float _effectVolume;
+		public AudioClip buttonHover, buttonAccept, buttonDecline;
 
 		private void Awake()
 		{
@@ -27,14 +28,18 @@ namespace Audio
 			effectsSource.pitch = 1f;
 			effectsSource.PlayOneShot(clip, vol);
 		}
+		
+		public void ButtonHoverSound() => effectsSource.PlayOneShot(buttonHover);
+		public void ButtonAcceptSound() => effectsSource.PlayOneShot(buttonAccept);
+		public void ButtonDeclineSound() => effectsSource.PlayOneShot(buttonDecline);
 
-		public void PlayRandomSound(AudioClip clip, float vol)
+		/*public void PlayRandomSound(AudioClip clip, float vol)
 		{
 			float randomPitch = Random.Range(minPitch, maxPitch);
 			effectsSource.pitch = randomPitch;
 			effectsSource.PlayOneShot(clip, vol);
 		}
-	
+
 		public void StopSound() => effectsSource.Stop();
 
 		public void PlayMusic(AudioClip clip)
@@ -73,6 +78,6 @@ namespace Audio
 				yield return null;
 			}
 			yield return null;
-		}
+		}*/
 	}
 }

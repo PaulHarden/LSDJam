@@ -50,6 +50,9 @@ MonoBehaviour:
   musicSource: {fileID: 449376349822475188}
   minPitch: 0.8
   maxPitch: 1.2
+  buttonHover: {fileID: 8300000, guid: 20b04950bda8265488e05d9303edaa9c, type: 3}
+  buttonAccept: {fileID: 8300000, guid: 893b602a14b24d941baa8f997d54f474, type: 3}
+  buttonDecline: {fileID: 8300000, guid: c2cdc35364c8a86449fbdd3e1469a06e, type: 3}
 --- !u!82 &3953026581669444466
 AudioSource:
   m_ObjectHideFlags: 0
