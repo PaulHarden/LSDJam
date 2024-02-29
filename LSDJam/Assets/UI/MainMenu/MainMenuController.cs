@@ -13,6 +13,7 @@ namespace UI.MainMenu
         {
             HideOptions();
             HidePrompt();
+            Time.timeScale = 1;
         }
         
         public void ShowOptions()
