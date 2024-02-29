@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 8900000, guid: 619e305f5165a9946b7f72464e44ca4a, type: 3}
   m_Sun: {fileID: 2114283753185838745}
-  m_IndirectSpecularColor: {r: 0.517912, g: 0.12088132, b: 0.35516062, a: 1}
+  m_IndirectSpecularColor: {r: 0.23420939, g: 0.07684478, b: 0.19919328, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5613,6 +5613,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1522517198}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a951adf54fa72424eb86abde2c0406e6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1522517199}
   m_SourcePrefab: {fileID: 100100000, guid: a951adf54fa72424eb86abde2c0406e6, type: 3}
 --- !u!4 &1522517196 stripped
 Transform:
@@ -5649,6 +5653,28 @@ CapsuleCollider:
   m_Height: 13.478473
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1522517199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522517197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a71e01a35c372444a98443a8b217178c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactPrompt: {fileID: 0}
+  requiredPrompt: {fileID: 0}
+  requiredItem: {fileID: 0}
+  rewardItem: {fileID: 0}
+  unlockedSound: {fileID: 0}
+  lockedSound: {fileID: 0}
+  offset: {x: 0, y: 0, z: 0}
+  destroyOnInteract: 0
+  changeOnInteract: 0
+  changedObject: {fileID: 0}
 --- !u!1001 &1534755400
 PrefabInstance:
   m_ObjectHideFlags: 0
