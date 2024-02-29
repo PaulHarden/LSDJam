@@ -11688,19 +11688,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1522517197}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a71e01a35c372444a98443a8b217178c, type: 3}
+  m_Script: {fileID: 11500000, guid: 89785a2f8a0ebbb45b93a8594a6a118e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactPrompt: {fileID: 0}
-  requiredPrompt: {fileID: 0}
-  requiredItem: {fileID: 0}
-  rewardItem: {fileID: 0}
-  unlockedSound: {fileID: 0}
-  lockedSound: {fileID: 0}
-  offset: {x: 0, y: 0, z: 0}
-  destroyOnInteract: 0
-  changeOnInteract: 0
-  changedObject: {fileID: 0}
 --- !u!1001 &1534755400
 PrefabInstance:
   m_ObjectHideFlags: 0
