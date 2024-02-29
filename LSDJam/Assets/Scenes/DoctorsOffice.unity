@@ -16708,6 +16708,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3598058085731429151, guid: 9452df42ce91ca246829516f521b8080,
         type: 3}
+      propertyPath: unlockedSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 2f711934cc087f44da47b751a435f551, type: 3}
+    - target: {fileID: 3598058085731429151, guid: 9452df42ce91ca246829516f521b8080,
+        type: 3}
       propertyPath: interactPrompt
       value: 
       objectReference: {fileID: 271893166}

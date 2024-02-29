@@ -30,6 +30,7 @@ namespace Collectables
 
         public void Add(ItemData itemData)
         {
+            inventory.Clear();
             // TODO: check if going over available slots capacity!
             if (_itemDictionary.TryGetValue(itemData, out InventoryItem item))
             {
@@ -51,6 +52,7 @@ namespace Collectables
         {
             if (_itemDictionary.TryGetValue(itemData, out InventoryItem item))
             {
+                inventory.Clear();
                 item.SubtractQuantity();
                 if (item.itemQuantity == 0)
                 {
