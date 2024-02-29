@@ -33,7 +33,8 @@ namespace Characters.Player
 		public bool canPiss = true;
 		public float piss;
 		private float pissMax = 100f;
-		public float pissRate;
+		public float pissDeplateRate;
+		public float pissRefillRate;
 		public GameObject PissFX;
 		private ParticleSystem.EmissionModule _emissionModule;
 
@@ -338,7 +339,7 @@ namespace Characters.Player
 				if (piss > 0 && canPiss)
 				{
 					_emissionModule.enabled = true;
-					piss -= Time.deltaTime * pissRate;
+					piss -= Time.deltaTime * pissDeplateRate;
 					canPiss = true;
 				}
 				else
@@ -351,7 +352,7 @@ namespace Characters.Player
 			{
 				_emissionModule.enabled = false;
 				if (piss <= pissMax)
-					piss += Time.deltaTime * pissRate / 10;
+					piss += Time.deltaTime * pissRefillRate;
 				canPiss = true;
 			}
 		}
