@@ -3421,7 +3421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 3
-  SprintSpeed: 8
+  SprintSpeed: 10
   RotationSpeed: 1
   SpeedChangeRate: 10
   health: 100
@@ -3429,7 +3429,8 @@ MonoBehaviour:
   staminaRate: 10
   canPiss: 1
   piss: 100
-  pissRate: 10
+  pissDeplateRate: 15
+  pissRefillRate: 5
   PissFX: {fileID: 1236293796212605849}
   flashlight: {fileID: 8645397246169253110}
   flashlightSoundOn: {fileID: 8300000, guid: fe7a82a2d2f6afd4eb25025ca646f8f4, type: 3}

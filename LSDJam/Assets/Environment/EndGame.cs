@@ -7,7 +7,7 @@ namespace Environment
 {
     public class EndGame : MonoBehaviour
     {
-        private void OnCollisionEnter(Collision other)
+        private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag("Player"))
                 StartCoroutine(LoadNextScene());
