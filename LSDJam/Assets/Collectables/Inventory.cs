@@ -27,6 +27,8 @@ namespace Collectables
             Fish.Fish.OnFishCollected -= Subtract;
             Pizza.PizzaSlice.OnPizzaCollected -= Subtract;
         }
+        
+        public void Start() => inventory.Clear();
 
         public void Add(ItemData itemData)
         {
